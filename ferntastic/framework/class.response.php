@@ -26,6 +26,11 @@ class SiteResponse {
 		setcookie( $name, '', -2000 );
 	}
 	
+	protected function sanitize_redirect($location) {
+		$location = preg_replace('|[^a-z0-9-~+_.?#=&;,/:%!]|i', '', $location);
+		return $location;
+	}
+	
 	public static function setCookie( ) {
 		$defaults = array(
 			'name' 		=> "name",

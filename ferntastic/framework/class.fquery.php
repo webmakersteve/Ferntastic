@@ -4,6 +4,57 @@
  * fQuery file. Used for DB manipulation.
  * fQuery allows selecting from the database and manipulation of selectors.
  *
+ * fQuery is the driver implementation of databases.
+ * As we all know, databases are not equal and have different syntax. There are SQL databases
+ * and there are NoSQL databases. There are file databases, like SQLLite, and there are filesystems,
+ * registrys, and more than we can think of. fQuery seeks to create a new query syntax that is easy
+ * to learn and feature rich without convulated structures, that can be easily converted to proper
+ * syntax in any database
+ *
+ * Rather than just make an array I seek to use strings with more mathematical significance. Wordpress tried to do
+ * things like this:
+ *
+ * <code>
+ * $x = new WP_Query( array( 'this' => 'that', 'hey' => array( '__not_in' => array('x','1'))) );
+ * </code>
+ *
+ * But who wants to deal with that? With fQuery the syntax is arguably more simple
+ * fQuery ('this[x="that"],hey[x^&="x,1"]');
+ * 
+ * This can be converted to proper SQL and drivers need only deal with execution and limited conversion
+ * the ENTIRE parsing engine is around 203 lines of code but the way it will work as fQuery will use a very
+ * extensive interface to do it.
+ * imagine it this way
+ *
+ * <code>
+ * $ref = $driver->addCol( 'hey' ); //returns integer reference to column
+ * $driver->addValue( $ref, 'hey' ); //adds hey as a required value of that column
+ * //now lets say we want to make sure that that column can also be japetto
+ * $driver->addValue( $ref, 'japetto' );
+ * //driver can now safely assume IN because multiple values have been specified
+ * $driver->addExValue( $ref, 'hey' );
+ * //now it knows to exclude the value hey for that column as well
+ * //driver can now make sure to implement that in its own way
+ * $driver->addRelation( $collection, $colID, $ref, fQuery::INNER_JOIN ); 
+ * //driver now knows to add relation : INNER JOIN collection ON colId = ref;
+ * $driver->addLimit( $bottom, $top ); //there we go. Now we limit ourselves
+ * $driver->addGroup( $ref ); //group by that column
+ * $driver->order( $ref, $direction ); //order it in that direction
+ * </code>
+ * After all of this is done, fQuery calls $driver->getResultSet(); and then $driver->clean();
+ * fQuery then deals with the rest. The driver need only deliver it!
+ * Drivers that support additions and updates will work in the same manner. fQuery feeds them the data and they build
+ * the "queries". Difference is additions are easy peasy! Those will just work this way
+ * $driver->add( $collection, $data ) ; data is just an array of key value pairs that will be added to the database
+ * Updates are a sort of mush of the two. fQuery parses regular sql where statement, and then feeds a key value array
+ * 
+ * key value arrays can also be used for simple queries, like where username = x and password = y; It also supports dynamic parameters
+ * If we specify first parameter as keys, next parameters become the values associated with those keys
+ *
+ * fquery will also support custom lettering like this[hey="that], then you can use protected letter x
+ * like that[x=hey]; hey was saved in a variable as an unorthodox input and can be called later. Works to duplicate
+ * parameters effectively
+ *
  * @author Stephen Parente (sparente@91ferns.com)
  * @package php_extensions
  * @version 0.5
@@ -415,7 +466,7 @@ class fQueryRows extends fQuery {
 		$counter = 0;
 		$newString = "";
 		
-		$rep = ";;fQuerySelectorSep".md5(time()+"Johnson_salt"+rand(0,50000)).";;"; //ridiculous SALT to replace commas with. No one would use this in a statement, right?
+		$rep = ";;fQuerySelectorSep".md5("Johnson_salt"+rand(0,50000)).";;"; //ridiculous SALT to replace commas with. No one would use this in a statement, right?
 		while ($counter < strlen( $selectors ) ) {
 			
 			$temp = substr( $selectors, $counter, 1);
@@ -1506,5 +1557,17 @@ fQueryAddFunction ( "order", "fq_order" );
 Fn::add( 'fQuery', function() {
 	call_user_func_array( 'fQuery', func_get_args() );
 }); //needs to be separate or it will mess up. This isn't even used often
+
+class fQueryStatement {
+	public function toGlobalizedArray();
+	
+	public function beginQueryBuild();
+	public function addColumn( $columnName );
+	public function addValue( $columnIdentifier, $value );
+	public function addLimit( $lower, $upper );
+	public function orderBy ( $columnIdentifier, $order );
+	public function groupBy( $columnIdentifier, $order );
+	
+}
 
 ?>

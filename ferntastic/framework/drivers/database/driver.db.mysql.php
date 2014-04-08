@@ -443,16 +443,16 @@ class MySQLBackup {
 	}
 	
 }
-
+/*
 class MySQLQuery implements Query {
-	public function __construct( $data );
+	public function __construct( $data ) {}
 	public function num(); //needs to return num return rows or whatever they're called in the others
 	public function iterate(); //needs to iterate through values
 	public function first(); //needs to return the first row
 	public function data(); //needs to return the data as an array
 }
 
-
+*/
 //$bu = $GLOBALS['MYSQL_BACKUP'] = new MySQLBackup(); //create the backup engine
 Fn::add('mysql', function( $a, $b, $c, $d ) {
 	return new MySQLEngine( $a, $b, $c, $d );

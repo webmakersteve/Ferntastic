@@ -1,5 +1,5 @@
 <?php
 
-interface PaymentDriver extends API {
+interface PaymentDriver {
 
 }

@@ -46,7 +46,7 @@ if (!defined('__ROOT')) {
  *
  */
 if (!defined('__DATA_PATH')) {
-	define( '__DATA_PATH', ROOT . DS . 'data' );
+	define( '__DATA_PATH', __ROOT . DS . 'data' );
 }
 
 /**
@@ -95,7 +95,6 @@ if (!empty($failed)) {
 	trigger_error("There was a problem loading the ferntastic core. Please check your directory structure and possibly try again", E_USER_ERROR);
 }
 
-Fn::load_extension('Dispatcher');
 $Dispatcher = new Dispatcher();
 $Dispatcher->dispatch(
 	new SiteRequest(),
