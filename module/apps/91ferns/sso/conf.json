@@ -1,0 +1,47 @@
+{
+  "name" : "91ferns SSO",
+  "author" : "91ferns Web Development",
+  "slug" : "sso",
+  
+  "connections" : {
+	"MySQL" : {
+		"user" : "root",
+		"database" : "91ferns",
+		"password" : "j3551c412",
+		"host" : "localhost"
+		  
+	}
+  },
+  
+  "controller" : "controller.91ferns.php",
+  
+  "layouts" : {
+    "homepage" : {
+      "name" : "Add Menu",
+      "regions" : [ "header", "site", "footer" ]
+    },
+	"default" : {
+		"name" : "Regular Page",
+		"regions" : [ "header", "sidebar", "page", "footer" ]
+	},
+	"login" : {
+		"name" : "Login Page",
+		"regions" : [ "index" ]	
+	},
+	"create" : {
+		"name" : "Signup Page",
+		"regions" : [ "signup" ]	
+	}
+  },
+  
+  "navigations" : [ {
+      "title" : "Main Navigation",
+      "name" : "mainNav"
+  }],
+
+  "stylesheets" : [ "style.css" ],
+  
+  "routes" : {
+	
+  }
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="AcquireCurrentState.php" server="23.96.41.234//var/www/91ferns/" local="130343740689712199" remote="130343741860000000" Dst="1" />
+<file name="ChannelNotAvailableException.php" server="23.96.41.234//var/www/91ferns/" local="130343740689882209" remote="130343741860000000" Dst="1" />
+<file name="ChunkedGoalStateDeserializer.php" server="23.96.41.234//var/www/91ferns/" local="130343740690062219" remote="130343741860000000" Dst="1" />
+<file name="CurrentState.php" server="23.96.41.234//var/www/91ferns/" local="130343740690242229" remote="130343741860000000" Dst="1" />
+<file name="CurrentStatus.php" server="23.96.41.234//var/www/91ferns/" local="130343740690412239" remote="130343741860000000" Dst="1" />
+<file name="FileInputChannel.php" server="23.96.41.234//var/www/91ferns/" local="130343740690582249" remote="130343741870000000" Dst="1" />
+<file name="FileOutputChannel.php" server="23.96.41.234//var/www/91ferns/" local="130343740690752258" remote="130343741870000000" Dst="1" />
+<file name="GoalState.php" server="23.96.41.234//var/www/91ferns/" local="130343740690932269" remote="130343741870000000" Dst="1" />
+<file name="ICurrentStateSerializer.php" server="23.96.41.234//var/www/91ferns/" local="130343740691102278" remote="130343741870000000" Dst="1" />
+<file name="IGoalStateDeserializer.php" server="23.96.41.234//var/www/91ferns/" local="130343740691282289" remote="130343741870000000" Dst="1" />
+<file name="IInputChannel.php" server="23.96.41.234//var/www/91ferns/" local="130343740691442298" remote="130343741870000000" Dst="1" />
+<file name="IOutputChannel.php" server="23.96.41.234//var/www/91ferns/" local="130343740691612308" remote="130343741870000000" Dst="1" />
+<file name="IRoleEnvironmentChange.php" server="23.96.41.234//var/www/91ferns/" local="130343740691782317" remote="130343741880000000" Dst="1" />
+<file name="IRoleEnvironmentDataDeserializer.php" server="23.96.41.234//var/www/91ferns/" local="130343740691952327" remote="130343741880000000" Dst="1" />
+<file name="IRuntimeClient.php" server="23.96.41.234//var/www/91ferns/" local="130343740692132337" remote="130343741880000000" Dst="1" />
+<file name="IRuntimeClientFactory.php" server="23.96.41.234//var/www/91ferns/" local="130343740692302347" remote="130343741880000000" Dst="1" />
+<file name="IRuntimeCurrentStateClient.php" server="23.96.41.234//var/www/91ferns/" local="130343740692472357" remote="130343741880000000" Dst="1" />
+<file name="IRuntimeGoalStateClient.php" server="23.96.41.234//var/www/91ferns/" local="130343740692632366" remote="130343741880000000" Dst="1" />
+<file name="LocalResource.php" server="23.96.41.234//var/www/91ferns/" local="130343740692812376" remote="130343741880000000" Dst="1" />
+<file name="Protocol1RuntimeClient.php" server="23.96.41.234//var/www/91ferns/" local="130343740692992387" remote="130343741880000000" Dst="1" />
+<file name="Protocol1RuntimeClientFactory.php" server="23.96.41.234//var/www/91ferns/" local="130343740693152396" remote="130343741890000000" Dst="1" />
+<file name="Protocol1RuntimeCurrentStateClient.php" server="23.96.41.234//var/www/91ferns/" local="130343740693332406" remote="130343741890000000" Dst="1" />
+<file name="Protocol1RuntimeGoalStateClient.php" server="23.96.41.234//var/www/91ferns/" local="130343740693532417" remote="130343741890000000" Dst="1" />
+<file name="ReleaseCurrentState.php" server="23.96.41.234//var/www/91ferns/" local="130343740693702427" remote="130343741890000000" Dst="1" />
+<file name="Role.php" server="23.96.41.234//var/www/91ferns/" local="130343740693872437" remote="130343741890000000" Dst="1" />
+<file name="RoleEnvironmentConfigurationSettingChange.php" server="23.96.41.234//var/www/91ferns/" local="130343740694052447" remote="130343741890000000" Dst="1" />
+<file name="RoleEnvironmentData.php" server="23.96.41.234//var/www/91ferns/" local="130343740694242458" remote="130343741890000000" Dst="1" />
+<file name="RoleEnvironmentNotAvailableException.php" server="23.96.41.234//var/www/91ferns/" local="130343740694412468" remote="130343741900000000" Dst="1" />
+<file name="RoleEnvironmentTopologyChange.php" server="23.96.41.234//var/www/91ferns/" local="130343740694572477" remote="130343741900000000" Dst="1" />
+<file name="RoleInstance.php" server="23.96.41.234//var/www/91ferns/" local="130343740694762488" remote="130343741900000000" Dst="1" />
+<file name="RoleInstanceEndpoint.php" server="23.96.41.234//var/www/91ferns/" local="130343740694942498" remote="130343741900000000" Dst="1" />
+<file name="RoleInstanceStatus.php" server="23.96.41.234//var/www/91ferns/" local="130343740695122508" remote="130343741900000000" Dst="1" />
+<file name="RuntimeKernel.php" server="23.96.41.234//var/www/91ferns/" local="130343740695312519" remote="130343741910000000" Dst="1" />
+<file name="RuntimeVersionManager.php" server="23.96.41.234//var/www/91ferns/" local="130343740695482529" remote="130343741910000000" Dst="1" />
+<file name="RuntimeVersionProtocolClient.php" server="23.96.41.234//var/www/91ferns/" local="130343740695662539" remote="130343741910000000" Dst="1" />
+<file name="XmlCurrentStateSerializer.php" server="23.96.41.234//var/www/91ferns/" local="130343740695832549" remote="130343741910000000" Dst="1" />
+<file name="XmlGoalStateDeserializer.php" server="23.96.41.234//var/www/91ferns/" local="130343740696002559" remote="130343741910000000" Dst="1" />
+<file name="XmlRoleEnvironmentDataDeserializer.php" server="23.96.41.234//var/www/91ferns/" local="130343740696212571" remote="130343741920000000" Dst="1" />
+<file name="AcquireCurrentState.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740689712199" remote="130343740680000000" Dst="1" />
+<file name="ChannelNotAvailableException.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740689882209" remote="130343740680000000" Dst="1" />
+<file name="ChunkedGoalStateDeserializer.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740690062219" remote="130343740690000000" Dst="1" />
+<file name="CurrentState.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740690242229" remote="130343740690000000" Dst="1" />
+<file name="CurrentStatus.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740690412239" remote="130343740690000000" Dst="1" />
+<file name="FileInputChannel.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740690582249" remote="130343740690000000" Dst="1" />
+<file name="FileOutputChannel.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740690752258" remote="130343740690000000" Dst="1" />
+<file name="GoalState.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740690932269" remote="130343740690000000" Dst="1" />
+<file name="ICurrentStateSerializer.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740691102278" remote="130343740690000000" Dst="1" />
+<file name="IGoalStateDeserializer.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740691282289" remote="130343740690000000" Dst="1" />
+<file name="IInputChannel.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740691442298" remote="130343740690000000" Dst="1" />
+<file name="IOutputChannel.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740691612308" remote="130343740690000000" Dst="1" />
+<file name="IRoleEnvironmentChange.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740691782317" remote="130343740690000000" Dst="1" />
+<file name="IRoleEnvironmentDataDeserializer.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740691952327" remote="130343740690000000" Dst="1" />
+<file name="IRuntimeClient.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740692132337" remote="130343740690000000" Dst="1" />
+<file name="IRuntimeClientFactory.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740692302347" remote="130343740690000000" Dst="1" />
+<file name="IRuntimeCurrentStateClient.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740692472357" remote="130343740690000000" Dst="1" />
+<file name="IRuntimeGoalStateClient.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740692632366" remote="130343740690000000" Dst="1" />
+<file name="LocalResource.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740692812376" remote="130343740690000000" Dst="1" />
+<file name="Protocol1RuntimeClient.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740692992387" remote="130343740690000000" Dst="1" />
+<file name="Protocol1RuntimeClientFactory.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740693152396" remote="130343740690000000" Dst="1" />
+<file name="Protocol1RuntimeCurrentStateClient.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740693332406" remote="130343740690000000" Dst="1" />
+<file name="Protocol1RuntimeGoalStateClient.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740693532417" remote="130343740690000000" Dst="1" />
+<file name="ReleaseCurrentState.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740693702427" remote="130343740690000000" Dst="1" />
+<file name="Role.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740693872437" remote="130343740690000000" Dst="1" />
+<file name="RoleEnvironmentConfigurationSettingChange.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740694052447" remote="130343740690000000" Dst="1" />
+<file name="RoleEnvironmentData.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740694242458" remote="130343740690000000" Dst="1" />
+<file name="RoleEnvironmentNotAvailableException.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740694412468" remote="130343740690000000" Dst="1" />
+<file name="RoleEnvironmentTopologyChange.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740694572477" remote="130343740690000000" Dst="1" />
+<file name="RoleInstance.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740694762488" remote="130343740690000000" Dst="1" />
+<file name="RoleInstanceEndpoint.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740694942498" remote="130343740690000000" Dst="1" />
+<file name="RoleInstanceStatus.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740695122508" remote="130343740690000000" Dst="1" />
+<file name="RuntimeKernel.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740695312519" remote="130343740690000000" Dst="1" />
+<file name="RuntimeVersionManager.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740695482529" remote="130343740690000000" Dst="1" />
+<file name="RuntimeVersionProtocolClient.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740695662539" remote="130343740690000000" Dst="1" />
+<file name="XmlCurrentStateSerializer.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740695832549" remote="130343740690000000" Dst="1" />
+<file name="XmlGoalStateDeserializer.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740696002559" remote="130343740690000000" Dst="1" />
+<file name="XmlRoleEnvironmentDataDeserializer.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740696212571" remote="130343740690000000" Dst="1" />
+</dwsync>

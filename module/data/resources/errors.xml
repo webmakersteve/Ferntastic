@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+	<string name="widgeterror0" comment="Widget error">Error loading information from info.xml</string>
+	<string name="widgeterror1" comment="Widget error">Error loading index.php file</string>
+	<string name="widgeterror2" comment="Widget error">Error loading style.css file</string>
+	<string name="widgeterror3" comment="Widget error">Unknown error</string>
+	<string name="widgeterror4" comment="Widget error">Couldn't open the directory. Aborted.</string>
+	
+	<string name="nomail" code="1" message="Error connecting to mail service.">Sorry, the server experienced an error sending an email. Please report this bug to us! Thanks!</string>
+	<string name="resource_file_load_error" code="2" message="Error loading file in resources.">It seems we had a problem loading resource data...</string>
+	
+	<string name="ucontext" code="3" message="Context wasn't defined">Something internally went wrong... sorry! We're on it as soon as we can!</string>
+	
+
+	<!-- FQUERY ERRRORS -->
+	<string name="invselector" code="4" message="Selector text is invalid.">It seems our database programmer needs to get his game together. Sorry!</string>
+	<string name="nofunc" code="5" message="There was no function loaded in fQuery">A function was called that doesn't exist!!</string>
+	<string name="app_noexists" code="6" message="App not found.">We couldn't find that page. Sorry.</string>
+	<string name="app_nopermission" code="7" message="User does not have permissions.">You don't have permission to use this app.</string>
+	<string name="app_no_resources" code="8" message="Resource file missing in app.">The page is broken. Sorry.</string>
+	<string name="app_no_settings" code="9" message="Settings file is missing in app.">The page is broken. Sorry.</string>
+	<string name="app_no_path" code="10" message="App path does not exist.">The page is broken. Sorry.</string>
+</resources>

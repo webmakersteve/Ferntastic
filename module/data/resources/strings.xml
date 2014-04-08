@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+	<!-- Header Information -->
+
+	<string name="ferns_logo">//secure.91ferns.com/img/91ferns.png</string>
+	<string name="new_acc_button">Create an Account</string>
+	
+	<!-- End Header Information -->
+	<!-- Footer Information -->
+	
+	<string name="footer_copyright"><![CDATA[&copy; 2012 91ferns Web Development, LLC.]]></string>
+	
+	<!-- End Footer Information -->
+	
+	<!-- Page Sensitive Text Strings -->
+	
+	<!-- index.php / login.php -->
+	<string name="login_title"><![CDATA[<span class="ferns">91ferns</span> Login Service]]></string>
+	<string name="login_intro"><![CDATA[Using your 91ferns account, you can login and gain access to your website progress, and check out your site while it isn't yet live. Didn't sign up for your 91ferns account yet? Here are some reasons to:]]></string>
+	
+	<!-- Page Form -->
+	
+	
+	<string name="login_remember_field"><![CDATA[&nbsp;&nbsp;Stay signed in]]></string>
+	<string name="login_noremember_label">Can't log in?</string>
+	<string name="login_diffuser_label">Sign in as a different user</string>
+	<string name="login_form_title">Log in</string>
+	<string name="login_email_field">Email Address</string>
+	<string name="login_password_field">Password</string>
+	
+	<!-- End Page Form -->
+	
+	<!-- End index.php / login.php -->
+
+	<!-- do-unsecure.php -->
+	
+	<!-- 91ferns register.php do strings -->
+	
+	<string name="default_dropdown_register">Click here and tell us, how would you like to sign up?</string>
+	
+	<string name="error_short_name">Your name is too short.</string>
+	<string name="error_full_name">Please enter your full name.</string>
+	<string name="error_account_exists">That account already exists.</string>
+	<string name="success_signup">You have successfully signed up. We emailed you a confirmation message.</string>
+	<string name="error_default">Something went wrong. We are contacting special people.</string>
+	<string name="error_finding_invoice">We couldn't find that invoice.</string>
+	<string name="error_improper_password">Please enter a valid password.</string>
+	<string name="error_ss_already_registered">That email address is already registered.</string>
+	<string name="error_ss_bioshort">Please tell us more about yourself.</string>
+	<string name="error_inv_email">Please enter a valid email.</string>
+	<string name="error_form_error">Something went wrong. Please try again soon.</string>
+	<string name="email_socrates">eweinblatt@gmail.com</string>
+	<string name="error_fun_formerror">Stop messing with JavaScript! Don't be a Mr. Bungles.</string>
+	<string name="error_invoice_used">This invoice has already been used.</string>
+	<string name="error_confirmation_email">The emails don't match.</string>
+	
+	<string name="error_cant_mail">We couldn't send you an email. We'll try again later. Sorry.</string>
+	
+	<!-- friend signup -->
+	
+	<string name="error_inv_spec_code">Please enter a valid referral code.</string>
+	<string name="error_no_spec_code">We can't find that code in our records.</string>
+	<string name="error_used_spec_code">We can't find that code in our records.</string>
+	
+	<!-- end 91ferns register.php do strings -->
+	<string name="confirmation_email_text"><![CDATA[
+	Thank you for signing up for your 91ferns account! Go to https://secure.91ferns.com/register?activate&key=%s to activate your account.
+	]]></string>
+	
+	<string name="account_activated"><![CDATA[
+	We have activated your account. You can sign in <a href="https://secure.91ferns.com/">here</a>
+	]]></string>
+	<string name="account_key_used">This account has already been activated.</string>
+	
+	<string name="validation_password_has_space">Passwords cannot contain a space.</string>
+	<string name="validation_password_too_short">Your password is too short.</string>
+	<string name="validation_password_not_entered">Please enter your password.</string>
+	
+</resources>

@@ -1,0 +1,36 @@
+# 6/4 
+Built folder structure and made empty files
+Copied a lot code from wordpress. Please edit it to make it your own. In functions.php file
+
+# 6/5
+Worked with formatting.php to add functions
+Theme-ified the HTML
+
+# 10/24
+Made significant edits to the code. Significant
+1. MySQL module has been changed from procedural style to Object style. Is now MySQLEngine class
+	1. Other library items like sites and fquery need to be edited significantly to take advantage of this change
+	2. As a failsafe, deprecated should be updated to include all of the old functions so we can take note
+	   of where they are being used and correct them
+2. Instituted an MVC framework
+3. Controller.php, Model.php, etc. have been added
+
+# 10/25
+First working app has been made. /patsys
+1. Files controller added and essentially implemented. All files in the hidden files directory are now controlled
+	1. Implementation of safe file access can be easily now done by editing the controller
+	
+# 10/26
+Several changes where made to get it closer to production level code
+1. fQuery has been changed to reduce amount of code and increase extensibility.
+2. fQuery now has support for the new MySQL framework. It must make use of the default database 
+	by saying fQuery::$useDatabase = MySQLi Resource ID
+3. Changes have been reverted to try to "smart check" for controllers which are not made to
+	handle more than one type of request. Routes will now be used to compensate for this 
+4. Config data now given to all helper classes
+5. More extensive helper class support. 
+6. Themer has been created
+	1. Themer is a class that is designed to help use parent-child relationships for views and regions.
+	2. Block support to come
+	3. Themer will also help output data to the pages within context. For example, stylesheets loaded
+7. A lot more great stuff

@@ -1,0 +1,66 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.trans-bar {
+	height: 7px;
+	opacity: 0.6;	
+}
+
+.bg-green {
+	background-color: green;	
+}
+
+.navbar {border-bottom: none;}
+
+body {padding-top: 90px;}
+
+@media only screen and (max-width: 767px;) {
+	/* phone */
+		
+}
+
+@media only screen and (min-width: 768px) { /* Bigger than a phone or maybe phone in landscape?*/
+
+}
+
+@media only screen and (min-width: 1000px) {/* Bigger than a tablet? */
+	.navbar .navbar-nav>li>a {text-transform: uppercase; font-size: 14px;}
+	.navbar .navbar-right li a {font-size: 12px; text-transform: none;}
+	.navbar .navbar-right li {padding-right: 0px; margin-right: 0;}
+	.navbar .navbar-right li:last-child {
+		padding-right : 0;
+	}
+	.navbar>.container .navbar-brand {
+		padding-bottom: 5px;
+	}
+	.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+		clear: both;
+		padding-left: 0;
+	}
+	.navbar-nav>li>a {
+		padding-top: 5px; padding-bottom: 5px;
+		background: none !important;
+		padding-right: 30px;
+	}
+	.navbar-nav>li>a:first-child {
+		padding-left: 0px;	
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

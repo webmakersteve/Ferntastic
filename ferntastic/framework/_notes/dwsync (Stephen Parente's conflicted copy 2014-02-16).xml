@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="class.cart.php" server="91ferns.com//domains/beta.91ferns.com/" local="130143382882090593" remote="130202254800000000" Dst="-1" />
+<file name="class.cms.php" server="91ferns.com//domains/beta.91ferns.com/" local="129925852370000000" remote="130202254800000000" Dst="-1" />
+<file name="class.config.php" server="91ferns.com//domains/beta.91ferns.com/" local="130149363453049511" remote="130202254800000000" Dst="-1" />
+<file name="class.errors.php" server="91ferns.com//domains/beta.91ferns.com/" local="130021506450000000" remote="130202254800000000" Dst="-1" />
+<file name="class.fquery.php" server="91ferns.com//domains/beta.91ferns.com/" local="129925832610000000" remote="130202254800000000" Dst="-1" />
+<file name="class.nonce.php" server="91ferns.com//domains/beta.91ferns.com/" local="130141656845561729" remote="130202254800000000" Dst="-1" />
+<file name="class.paypal.php" server="91ferns.com//domains/beta.91ferns.com/" local="130142496894401814" remote="130202254800000000" Dst="-1" />
+<file name="class.presets.php" server="91ferns.com//domains/beta.91ferns.com/" local="129821890070000000" remote="130202254800000000" Dst="-1" />
+<file name="class.resources.php" server="91ferns.com//domains/beta.91ferns.com/" local="130149362355596741" remote="130202254800000000" Dst="-1" />
+<file name="class.site.php" server="91ferns.com//domains/beta.91ferns.com/" local="129924778420000000" remote="130202254800000000" Dst="-1" />
+<file name="class.switcher.php" server="91ferns.com//domains/beta.91ferns.com/" local="129890150180000000" remote="130202254800000000" Dst="-1" />
+<file name="class.twitter.php" server="91ferns.com//domains/beta.91ferns.com/" local="129821890100000000" remote="130202254800000000" Dst="-1" />
+<file name="class.updater.php" server="91ferns.com//domains/beta.91ferns.com/" local="129924778180000000" remote="130202254800000000" Dst="-1" />
+<file name="class.ups.php" server="91ferns.com//domains/beta.91ferns.com/" local="130143458494711253" remote="130202254800000000" Dst="-1" />
+<file name="class.user.php" server="91ferns.com//domains/beta.91ferns.com/" local="130141628131829398" remote="130202254800000000" Dst="-1" />
+<file name="class.usps.php" server="91ferns.com//domains/beta.91ferns.com/" local="130143264053716809" remote="130202254800000000" Dst="-1" />
+<file name="deprecated.legacy.php" server="91ferns.com//domains/beta.91ferns.com/" local="129924789490000000" remote="130202254800000000" Dst="-1" />
+<file name="functions.php" server="91ferns.com//domains/beta.91ferns.com/" local="130260257724433060" remote="130260149400000000" Dst="-1" />
+<file name="module.dbcms.php" server="91ferns.com//domains/beta.91ferns.com/" local="129925880730000000" remote="130202254800000000" Dst="-1" />
+<file name="module.mongo.php" server="91ferns.com//domains/beta.91ferns.com/" local="129821890090000000" remote="130202254800000000" Dst="-1" />
+<file name="module.mysql.php" server="91ferns.com//domains/beta.91ferns.com/" local="130143339883801232" remote="130202254800000000" Dst="-1" />
+<file name="functions.php" server="C:/Users/Public/XAMPP/htdocs/beta/" local="130272181058020531" remote="130272181050000000" Dst="2" />
+<file name="class.resources.php" server="C:/Users/Public/XAMPP/htdocs/beta/" local="130268860418116470" remote="130268860410000000" Dst="2" />
+<file name="module.mysql.php" server="C:/Users/Public/XAMPP/htdocs/beta/" local="130273236577467859" remote="130273236570000000" Dst="2" />
+<file name="class.fquery.php" server="C:/Users/Public/XAMPP/htdocs/beta/" local="130273240975069388" remote="130273240970000000" Dst="2" />
+<file name="class.errors.php" server="C:/Users/Public/XAMPP/htdocs/beta/" local="130268866341825287" remote="130268866340000000" Dst="2" />
+<file name="class.response.php" server="C:/Users/Public/XAMPP/htdocs/beta/" local="130268872991655635" remote="130268872990000000" Dst="2" />
+<file name="class.request.php" server="C:/Users/Public/XAMPP/htdocs/beta/" local="130272865613655033" remote="130272865610000000" Dst="2" />
+<file name="class.dispatcher.php" server="C:/Users/Public/XAMPP/htdocs/beta/" local="130273217894199237" remote="130273217890000000" Dst="2" />
+<file name="class.cache.php" server="C:/Users/Public/XAMPP/htdocs/beta/" local="130270945180857732" remote="130270945180000000" Dst="2" />
+<file name="deprecated.legacy.php" server="C:/Users/Public/XAMPP/htdocs/beta/" local="130272176672009666" remote="130272176670000000" Dst="2" />
+<file name="class.cache.php" server="91ferns.com/domains/beta.91ferns.com/" local="130272809370000000" remote="130295142000000000" Dst="1" />
+<file name="class.cart.php" server="91ferns.com/domains/beta.91ferns.com/" local="130143382880000000" remote="130295142000000000" Dst="1" />
+<file name="class.cms.php" server="91ferns.com/domains/beta.91ferns.com/" local="129925852370000000" remote="130295142000000000" Dst="1" />
+<file name="class.config.php" server="91ferns.com/domains/beta.91ferns.com/" local="130305824663761274" remote="130305716400000000" Dst="1" />
+<file name="class.dispatcher.php" server="91ferns.com/domains/beta.91ferns.com/" local="130306625503045815" remote="130306553400000000" Dst="1" />
+<file name="class.errors.php" server="91ferns.com/domains/beta.91ferns.com/" local="130305642842631700" remote="130305534600000000" Dst="1" />
+<file name="class.nonce.php" server="91ferns.com/domains/beta.91ferns.com/" local="130141656840000000" remote="130295142000000000" Dst="1" />
+<file name="class.fquery.php" server="91ferns.com/domains/beta.91ferns.com/" local="130305782030842810" remote="130305673800000000" Dst="1" />
+<file name="class.paypal.php" server="91ferns.com/domains/beta.91ferns.com/" local="130142496890000000" remote="130295142000000000" Dst="1" />
+<file name="class.presets.php" server="91ferns.com/domains/beta.91ferns.com/" local="129821890070000000" remote="130295142000000000" Dst="1" />
+<file name="class.registry.php" server="91ferns.com/domains/beta.91ferns.com/" local="130209033070000000" remote="130295142000000000" Dst="1" />
+<file name="class.request.php" server="91ferns.com/domains/beta.91ferns.com/" local="130314167103819053" remote="130314058800000000" Dst="1" />
+<file name="class.resources.php" server="91ferns.com/domains/beta.91ferns.com/" local="130305641249390572" remote="130305532800000000" Dst="1" />
+<file name="class.response.php" server="91ferns.com/domains/beta.91ferns.com/" local="130314229836117135" remote="130314121800000000" Dst="1" />
+<file name="class.RSA.php" server="91ferns.com/domains/beta.91ferns.com/" local="130268855700000000" remote="130295142000000000" Dst="1" />
+<file name="class.site.php" server="91ferns.com/domains/beta.91ferns.com/" local="129924778420000000" remote="130295142000000000" Dst="1" />
+<file name="class.switcher.php" server="91ferns.com/domains/beta.91ferns.com/" local="129890150180000000" remote="130295142000000000" Dst="1" />
+<file name="class.twitter.php" server="91ferns.com/domains/beta.91ferns.com/" local="129821890100000000" remote="130295142000000000" Dst="1" />
+<file name="class.updater.php" server="91ferns.com/domains/beta.91ferns.com/" local="129924778180000000" remote="130295142000000000" Dst="1" />
+<file name="class.ups.php" server="91ferns.com/domains/beta.91ferns.com/" local="130143458490000000" remote="130295142000000000" Dst="1" />
+<file name="class.user.php" server="91ferns.com/domains/beta.91ferns.com/" local="130306558715295774" remote="130306486200000000" Dst="1" />
+<file name="class.usps.php" server="91ferns.com/domains/beta.91ferns.com/" local="130143264050000000" remote="130295142000000000" Dst="1" />
+<file name="deprecated.legacy.php" server="91ferns.com/domains/beta.91ferns.com/" local="130295275514068476" remote="130295167200000000" Dst="1" />
+<file name="functions.php" server="91ferns.com/domains/beta.91ferns.com/" local="130305798931699484" remote="130305690600000000" Dst="1" />
+<file name="module.dbcms.php" server="91ferns.com/domains/beta.91ferns.com/" local="129925880730000000" remote="130295142000000000" Dst="1" />
+<file name="module.mongo.php" server="91ferns.com/domains/beta.91ferns.com/" local="129821890090000000" remote="130295142000000000" Dst="1" />
+<file name="module.mysql.php" server="91ferns.com/domains/beta.91ferns.com/" local="130305780988353183" remote="130305672600000000" Dst="1" />
+<file name="module.sso.php" server="91ferns.com/domains/beta.91ferns.com/" local="130268853460000000" remote="130295142000000000" Dst="1" />
+<file name="class.cache.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130272809370000000" remote="130272809370000000" Dst="1" />
+<file name="class.cart.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130143382880000000" remote="130143382880000000" Dst="1" />
+<file name="class.cms.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="129925852370000000" remote="129925852370000000" Dst="1" />
+<file name="class.config.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130305824663761274" remote="130305824660000000" Dst="1" />
+<file name="class.dispatcher.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130306625503045815" remote="130306625500000000" Dst="1" />
+<file name="class.errors.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130305642842631700" remote="130305642840000000" Dst="1" />
+<file name="class.fquery.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130305782030842810" remote="130305782030000000" Dst="1" />
+<file name="class.nonce.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130141656840000000" remote="130141656840000000" Dst="1" />
+<file name="class.paypal.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130142496890000000" remote="130142496890000000" Dst="1" />
+<file name="class.presets.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="129821890070000000" remote="129821890070000000" Dst="1" />
+<file name="class.registry.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130209033070000000" remote="130209033070000000" Dst="1" />
+<file name="class.request.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130306572852274363" remote="130306572850000000" Dst="1" />
+<file name="class.resources.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130305641249390572" remote="130305641240000000" Dst="1" />
+<file name="class.response.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130306394176044667" remote="130306394170000000" Dst="1" />
+<file name="class.RSA.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130268855700000000" remote="130268855700000000" Dst="1" />
+<file name="class.site.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="129924778420000000" remote="129924778420000000" Dst="1" />
+<file name="class.switcher.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="129890150180000000" remote="129890150180000000" Dst="1" />
+<file name="class.twitter.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="129821890100000000" remote="129821890100000000" Dst="1" />
+<file name="class.updater.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="129924778180000000" remote="129924778180000000" Dst="1" />
+<file name="class.ups.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130143458490000000" remote="130143458490000000" Dst="1" />
+<file name="class.user.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130306558715295774" remote="130306558710000000" Dst="1" />
+<file name="class.usps.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130143264050000000" remote="130143264050000000" Dst="1" />
+<file name="deprecated.legacy.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130295275514068476" remote="130295275510000000" Dst="1" />
+<file name="functions.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130305798931699484" remote="130305798930000000" Dst="1" />
+<file name="module.dbcms.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="129925880730000000" remote="129925880730000000" Dst="1" />
+<file name="module.mongo.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="129821890090000000" remote="129821890090000000" Dst="1" />
+<file name="module.mysql.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130305780988353183" remote="130305780980000000" Dst="1" />
+<file name="module.sso.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130268853460000000" remote="130268853460000000" Dst="1" />
+<file name="class.config.bak.php" server="C:/Users/Stephen/Google Drive/VC/beta.91ferns.com/" local="130305767849261670" remote="130305767840000000" Dst="1" />
+<file name="class.cache.php" server="23.96.41.234//var/www/91ferns/" local="130272809370000000" remote="130342955020000000" Dst="1" />
+<file name="class.cart.php" server="23.96.41.234//var/www/91ferns/" local="130143382880000000" remote="130342955020000000" Dst="1" />
+<file name="class.cms.php" server="23.96.41.234//var/www/91ferns/" local="129925852370000000" remote="130342955020000000" Dst="1" />
+<file name="class.config.bak.php" server="23.96.41.234//var/www/91ferns/" local="130305767849261670" remote="130342955020000000" Dst="1" />
+<file name="class.config.php" server="23.96.41.234//var/www/91ferns/" local="130305824663761274" remote="130342955020000000" Dst="1" />
+<file name="class.dispatcher.php" server="23.96.41.234//var/www/91ferns/" local="130344659468174789" remote="130344659450000000" Dst="1" />
+<file name="class.errors.php" server="23.96.41.234//var/www/91ferns/" local="130305642842631700" remote="130342955020000000" Dst="1" />
+<file name="class.fquery.php" server="23.96.41.234//var/www/91ferns/" local="130305782030842810" remote="130342955030000000" Dst="1" />
+<file name="class.nonce.php" server="23.96.41.234//var/www/91ferns/" local="130141656840000000" remote="130342955030000000" Dst="1" />
+<file name="class.paypal.php" server="23.96.41.234//var/www/91ferns/" local="130142496890000000" remote="130342955030000000" Dst="1" />
+<file name="class.presets.php" server="23.96.41.234//var/www/91ferns/" local="129821890070000000" remote="130342955030000000" Dst="1" />
+<file name="class.registry.php" server="23.96.41.234//var/www/91ferns/" local="130209033070000000" remote="130342955030000000" Dst="1" />
+<file name="class.request.php" server="23.96.41.234//var/www/91ferns/" local="130343766164579278" remote="130343766150000000" Dst="1" />
+<file name="class.resources.php" server="23.96.41.234//var/www/91ferns/" local="130305641249390572" remote="130342955030000000" Dst="1" />
+<file name="class.response.php" server="23.96.41.234//var/www/91ferns/" local="130314229836117135" remote="130342955030000000" Dst="1" />
+<file name="class.RSA.php" server="23.96.41.234//var/www/91ferns/" local="130268855700000000" remote="130342955030000000" Dst="1" />
+<file name="class.site.php" server="23.96.41.234//var/www/91ferns/" local="129924778420000000" remote="130342955030000000" Dst="1" />
+<file name="class.switcher.php" server="23.96.41.234//var/www/91ferns/" local="130343763043430758" remote="130343763040000000" Dst="1" />
+<file name="class.twitter.php" server="23.96.41.234//var/www/91ferns/" local="129821890100000000" remote="130342955040000000" Dst="1" />
+<file name="class.updater.php" server="23.96.41.234//var/www/91ferns/" local="129924778180000000" remote="130342955040000000" Dst="1" />
+<file name="class.ups.php" server="23.96.41.234//var/www/91ferns/" local="130143458490000000" remote="130342955040000000" Dst="1" />
+<file name="class.user.php" server="23.96.41.234//var/www/91ferns/" local="130306558715295774" remote="130342955040000000" Dst="1" />
+<file name="class.usps.php" server="23.96.41.234//var/www/91ferns/" local="130143264050000000" remote="130342955040000000" Dst="1" />
+<file name="deprecated.legacy.php" server="23.96.41.234//var/www/91ferns/" local="130295275514068476" remote="130342955040000000" Dst="1" />
+<file name="functions.php" server="23.96.41.234//var/www/91ferns/" local="130343762914823403" remote="130343762920000000" Dst="1" />
+<file name="module.dbcms.php" server="23.96.41.234//var/www/91ferns/" local="129925880730000000" remote="130342955060000000" Dst="1" />
+<file name="module.mongo.php" server="23.96.41.234//var/www/91ferns/" local="129821890090000000" remote="130342955060000000" Dst="1" />
+<file name="module.mysql.php" server="23.96.41.234//var/www/91ferns/" local="130305780988353183" remote="130342955060000000" Dst="1" />
+<file name="module.sso.php" server="23.96.41.234//var/www/91ferns/" local="130268853460000000" remote="130342955060000000" Dst="1" />
+<file name="class.router.php" server="23.96.41.234//var/www/91ferns/" local="130344658771204924" remote="130344658750000000" Dst="1" />
+<file name="class.cache.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130272809370000000" remote="130272809370000000" Dst="1" />
+<file name="class.cart.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130143382880000000" remote="130143382880000000" Dst="1" />
+<file name="class.cms.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="129925852370000000" remote="129925852370000000" Dst="1" />
+<file name="class.config.bak.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305767849261670" remote="130305767840000000" Dst="1" />
+<file name="class.config.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305824663761274" remote="130305824660000000" Dst="1" />
+<file name="class.dispatcher.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130344659468174789" remote="130344659460000000" Dst="1" />
+<file name="class.errors.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305642842631700" remote="130305642840000000" Dst="1" />
+<file name="class.fquery.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305782030842810" remote="130305782030000000" Dst="1" />
+<file name="class.nonce.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130141656840000000" remote="130141656840000000" Dst="1" />
+<file name="class.paypal.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130142496890000000" remote="130142496890000000" Dst="1" />
+<file name="class.presets.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="129821890070000000" remote="129821890070000000" Dst="1" />
+<file name="class.registry.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130209033070000000" remote="130209033070000000" Dst="1" />
+<file name="class.request.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343766164579278" remote="130343766160000000" Dst="1" />
+<file name="class.resources.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130350502274597501" remote="130350502270000000" Dst="1" />
+<file name="class.response.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130314229836117135" remote="130314229830000000" Dst="1" />
+<file name="class.router.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130344658771204924" remote="130344658770000000" Dst="1" />
+<file name="class.RSA.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130268855700000000" remote="130268855700000000" Dst="1" />
+<file name="class.site.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="129924778420000000" remote="129924778420000000" Dst="1" />
+<file name="class.switcher.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343763043430758" remote="130343763040000000" Dst="1" />
+<file name="class.twitter.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="129821890100000000" remote="129821890100000000" Dst="1" />
+<file name="class.updater.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="129924778180000000" remote="129924778180000000" Dst="1" />
+<file name="class.ups.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130143458490000000" remote="130143458490000000" Dst="1" />
+<file name="class.user.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130306558715295774" remote="130306558710000000" Dst="1" />
+<file name="class.usps.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130143264050000000" remote="130143264050000000" Dst="1" />
+<file name="deprecated.legacy.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130295275514068476" remote="130295275510000000" Dst="1" />
+<file name="functions.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343762914823403" remote="130343762910000000" Dst="1" />
+<file name="module.dbcms.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="129925880730000000" remote="129925880730000000" Dst="1" />
+<file name="module.mongo.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="129821890090000000" remote="129821890090000000" Dst="1" />
+<file name="module.mysql.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305780988353183" remote="130305780980000000" Dst="1" />
+<file name="module.sso.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130268853460000000" remote="130268853460000000" Dst="1" />
+</dwsync>

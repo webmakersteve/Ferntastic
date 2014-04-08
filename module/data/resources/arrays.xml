@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+	<array type="string" name="states">
+		<string key="AL">Alabama</string>
+		<string key="AK">Alaska</string>
+		<string key="AZ">Arizona</string>
+		<string key="AR">Arkansas</string>
+		<string key="CA">California</string>
+		<string key="CO">Colorado</string>
+		<string key="CT">Connecticut</string>
+		<string key="DE">Delaware</string>
+		<string key="DC">District Of Columbia</string>
+		<string key="FL">Florida</string>
+		<string key="GA">Georgia</string>
+		<string key="HI">Hawaii</string>
+		<string key="ID">Idaho</string>
+		<string key="IL">Illinois</string>
+		<string key="IN">Indiana</string>
+		<string key="IA">Iowa</string>
+		<string key="KS">Kansas</string>
+		<string key="KY">Kentucky</string>
+		<string key="LA">Louisiana</string>
+		<string key="ME">Maine</string>
+		<string key="MD">Maryland</string>
+		<string key="MA">Massachusetts</string>
+		<string key="MI">Michigan</string>
+		<string key="MN">Minnesota</string>
+		<string key="MS">Mississippi</string>
+		<string key="MO">Missouri</string>
+		<string key="MT">Montana</string>
+		<string key="NE">Nebraska</string>
+		<string key="NV">Nevada</string>
+		<string key="NH">New Hampshire</string>
+		<string key="NJ">New Jersey</string>
+		<string key="NM">New Mexico</string>
+		<string key="NY">New York</string>
+		<string key="NC">North Carolina</string>
+		<string key="ND">North Dakota</string>
+		<string key="OH">Ohio</string>
+		<string key="OK">Oklahoma</string>
+		<string key="OR">Oregon</string>
+		<string key="PA">Pennsylvania</string>
+		<string key="RI">Rhode Island</string>
+		<string key="SC">South Carolina</string>
+		<string key="SD">South Dakota</string>
+		<string key="TN">Tennessee</string>
+		<string key="TX">Texas</string>
+		<string key="UT">Utah</string>
+		<string key="VT">Vermont</string>
+		<string key="VA">Virginia</string>
+		<string key="WA">Washington</string>
+		<string key="WV">West Virginia</string>
+		<string key="WI">Wisconsin</string>
+		<string key="WY">Wyoming</string> 
+	</array>
+
+</resources>

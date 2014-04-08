@@ -1,0 +1,7 @@
+# 6/4 
+Built folder structure and made empty files
+Copied code from wordpress. Please edit it to make it your own. In functions.php file
+
+# 6/5
+Worked with formatting.php to add functions
+Theme-ified the HTML

@@ -1,0 +1,47 @@
+{
+  "name" : "Ingenuity Design Test",
+  "author" : "91ferns Web Development",
+  "slug" : "ingenuity",
+  
+  "connections" : {
+	"MySQL" : {
+		"user" : "db145083_writer",
+		"database" : "db145083_patsys",
+		"password" : "91ferns_writer",
+		"host" : "internal-db.s145083.gridserver.com"
+		  
+	}
+  },
+  
+  "controller" : "controller.ingenuity.php",
+  
+  "layouts" : {
+    "homepage" : {
+      "name" : "Add Menu",
+      "regions" : [ "header", "site", "footer" ]
+    },
+	"default" : {
+		"name" : "Regular Page",
+		"regions" : [ "header", "page", "footer" ]
+	}
+  },
+  
+  "navigations" : [ {
+      "title" : "Main Navigation",
+      "name" : "mainNav"
+  }, {
+  	  "title" : "Footer Navigation Left",
+	  "name" : "footNavLeft"
+  }, {
+  	  "title" : "Footer Navigation Left Under",
+	  "name" : "footNavRight"
+  } ],
+
+  "stylesheets" : [ "style.css" ],
+
+  "systemCollections" : [ "products" ],
+  
+  "routes" : {
+
+  }
+}

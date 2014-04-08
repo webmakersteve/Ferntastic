@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="AffinityGroup.php" server="23.96.41.234//var/www/91ferns/" local="130343740682411781" remote="130343741780000000" Dst="1" />
+<file name="AsynchronousOperationResult.php" server="23.96.41.234//var/www/91ferns/" local="130343740682521788" remote="130343741780000000" Dst="1" />
+<file name="ChangeDeploymentConfigurationOptions.php" server="23.96.41.234//var/www/91ferns/" local="130343740682651795" remote="130343741780000000" Dst="1" />
+<file name="CreateAffinityGroupOptions.php" server="23.96.41.234//var/www/91ferns/" local="130343740682761801" remote="130343741780000000" Dst="1" />
+<file name="CreateDeploymentOptions.php" server="23.96.41.234//var/www/91ferns/" local="130343740682881808" remote="130343741780000000" Dst="1" />
+<file name="CreateServiceOptions.php" server="23.96.41.234//var/www/91ferns/" local="130343740683021816" remote="130343741780000000" Dst="1" />
+<file name="Deployment.php" server="23.96.41.234//var/www/91ferns/" local="130343740683171825" remote="130343741790000000" Dst="1" />
+<file name="DeploymentSlot.php" server="23.96.41.234//var/www/91ferns/" local="130343740683291832" remote="130343741790000000" Dst="1" />
+<file name="DeploymentStatus.php" server="23.96.41.234//var/www/91ferns/" local="130343740683411839" remote="130343741790000000" Dst="1" />
+<file name="GetAffinityGroupPropertiesResult.php" server="23.96.41.234//var/www/91ferns/" local="130343740683541846" remote="130343741790000000" Dst="1" />
+<file name="GetDeploymentOptions.php" server="23.96.41.234//var/www/91ferns/" local="130343740683671853" remote="130343741790000000" Dst="1" />
+<file name="GetDeploymentResult.php" server="23.96.41.234//var/www/91ferns/" local="130343740683801861" remote="130343741800000000" Dst="1" />
+<file name="GetHostedServicePropertiesOptions.php" server="23.96.41.234//var/www/91ferns/" local="130343740683931868" remote="130343741800000000" Dst="1" />
+<file name="GetHostedServicePropertiesResult.php" server="23.96.41.234//var/www/91ferns/" local="130343740684051875" remote="130343741800000000" Dst="1" />
+<file name="GetOperationStatusResult.php" server="23.96.41.234//var/www/91ferns/" local="130343740684181883" remote="130343741800000000" Dst="1" />
+<file name="GetStorageServiceKeysResult.php" server="23.96.41.234//var/www/91ferns/" local="130343740684321891" remote="130343741800000000" Dst="1" />
+<file name="GetStorageServicePropertiesResult.php" server="23.96.41.234//var/www/91ferns/" local="130343740684441897" remote="130343741800000000" Dst="1" />
+<file name="HostedService.php" server="23.96.41.234//var/www/91ferns/" local="130343740684581905" remote="130343741810000000" Dst="1" />
+<file name="InputEndpoint.php" server="23.96.41.234//var/www/91ferns/" local="130343740684711913" remote="130343741810000000" Dst="1" />
+<file name="KeyType.php" server="23.96.41.234//var/www/91ferns/" local="130343740684841920" remote="130343741810000000" Dst="1" />
+<file name="ListAffinityGroupsResult.php" server="23.96.41.234//var/www/91ferns/" local="130343740684961927" remote="130343741810000000" Dst="1" />
+<file name="ListHostedServicesResult.php" server="23.96.41.234//var/www/91ferns/" local="130343740685081934" remote="130343741810000000" Dst="1" />
+<file name="ListLocationsResult.php" server="23.96.41.234//var/www/91ferns/" local="130343740685201941" remote="130343741820000000" Dst="1" />
+<file name="ListStorageServicesResult.php" server="23.96.41.234//var/www/91ferns/" local="130343740685311947" remote="130343741820000000" Dst="1" />
+<file name="Location.php" server="23.96.41.234//var/www/91ferns/" local="130343740685431954" remote="130343741820000000" Dst="1" />
+<file name="Locations.php" server="23.96.41.234//var/www/91ferns/" local="130343740685551961" remote="130343741820000000" Dst="1" />
+<file name="Mode.php" server="23.96.41.234//var/www/91ferns/" local="130343740685681968" remote="130343741820000000" Dst="1" />
+<file name="OperationStatus.php" server="23.96.41.234//var/www/91ferns/" local="130343740685811976" remote="130343741830000000" Dst="1" />
+<file name="Role.php" server="23.96.41.234//var/www/91ferns/" local="130343740685941983" remote="130343741830000000" Dst="1" />
+<file name="RoleInstance.php" server="23.96.41.234//var/www/91ferns/" local="130343740686081991" remote="130343741830000000" Dst="1" />
+<file name="StorageService.php" server="23.96.41.234//var/www/91ferns/" local="130343740686211999" remote="130343741830000000" Dst="1" />
+<file name="UpdateServiceOptions.php" server="23.96.41.234//var/www/91ferns/" local="130343740686342006" remote="130343741830000000" Dst="1" />
+<file name="UpgradeDeploymentOptions.php" server="23.96.41.234//var/www/91ferns/" local="130343740686512016" remote="130343741840000000" Dst="1" />
+<file name="UpgradeStatus.php" server="23.96.41.234//var/www/91ferns/" local="130343740686642023" remote="130343741840000000" Dst="1" />
+<file name="AffinityGroup.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740682411781" remote="130343740680000000" Dst="1" />
+<file name="AsynchronousOperationResult.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740682521788" remote="130343740680000000" Dst="1" />
+<file name="ChangeDeploymentConfigurationOptions.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740682651795" remote="130343740680000000" Dst="1" />
+<file name="CreateAffinityGroupOptions.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740682761801" remote="130343740680000000" Dst="1" />
+<file name="CreateDeploymentOptions.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740682881808" remote="130343740680000000" Dst="1" />
+<file name="CreateServiceOptions.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740683021816" remote="130343740680000000" Dst="1" />
+<file name="Deployment.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740683171825" remote="130343740680000000" Dst="1" />
+<file name="DeploymentSlot.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740683291832" remote="130343740680000000" Dst="1" />
+<file name="DeploymentStatus.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740683411839" remote="130343740680000000" Dst="1" />
+<file name="GetAffinityGroupPropertiesResult.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740683541846" remote="130343740680000000" Dst="1" />
+<file name="GetDeploymentOptions.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740683671853" remote="130343740680000000" Dst="1" />
+<file name="GetDeploymentResult.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740683801861" remote="130343740680000000" Dst="1" />
+<file name="GetHostedServicePropertiesOptions.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740683931868" remote="130343740680000000" Dst="1" />
+<file name="GetHostedServicePropertiesResult.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740684051875" remote="130343740680000000" Dst="1" />
+<file name="GetOperationStatusResult.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740684181883" remote="130343740680000000" Dst="1" />
+<file name="GetStorageServiceKeysResult.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740684321891" remote="130343740680000000" Dst="1" />
+<file name="GetStorageServicePropertiesResult.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740684441897" remote="130343740680000000" Dst="1" />
+<file name="HostedService.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740684581905" remote="130343740680000000" Dst="1" />
+<file name="InputEndpoint.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740684711913" remote="130343740680000000" Dst="1" />
+<file name="KeyType.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740684841920" remote="130343740680000000" Dst="1" />
+<file name="ListAffinityGroupsResult.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740684961927" remote="130343740680000000" Dst="1" />
+<file name="ListHostedServicesResult.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740685081934" remote="130343740680000000" Dst="1" />
+<file name="ListLocationsResult.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740685201941" remote="130343740680000000" Dst="1" />
+<file name="ListStorageServicesResult.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740685311947" remote="130343740680000000" Dst="1" />
+<file name="Location.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740685431954" remote="130343740680000000" Dst="1" />
+<file name="Locations.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740685551961" remote="130343740680000000" Dst="1" />
+<file name="Mode.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740685681968" remote="130343740680000000" Dst="1" />
+<file name="OperationStatus.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740685811976" remote="130343740680000000" Dst="1" />
+<file name="Role.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740685941983" remote="130343740680000000" Dst="1" />
+<file name="RoleInstance.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740686081991" remote="130343740680000000" Dst="1" />
+<file name="StorageService.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740686211999" remote="130343740680000000" Dst="1" />
+<file name="UpdateServiceOptions.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740686342006" remote="130343740680000000" Dst="1" />
+<file name="UpgradeDeploymentOptions.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740686512016" remote="130343740680000000" Dst="1" />
+<file name="UpgradeStatus.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343740686642023" remote="130343740680000000" Dst="1" />
+</dwsync>

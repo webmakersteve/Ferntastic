@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="SmtpTransport.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="MemorySpool.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="NullTransport.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="LoadBalancedTransport.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="ReplacementFilterFactory.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Signer.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="TransportException.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="IoException.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="DependencyException.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Filterable.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="EmbeddedFile.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="SignedMessage.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="DependencyContainer.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Transport.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Attachment.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Mailer.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="InputByteStream.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="SwiftException.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Encoding.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Preferences.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="ConfigurableSpool.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="RfcComplianceException.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Encoder.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Spool.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Validate.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="KeyCache.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="OutputByteStream.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="StreamFilter.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="CharacterReaderFactory.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="FileSpool.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="FileStream.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="MailTransport.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="FailoverTransport.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="CharacterStream.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Message.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="CharacterReader.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Image.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="SpoolTransport.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="SendmailTransport.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="MimePart.php" server="23.96.41.234//var/www/91ferns/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Attachment.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="CharacterReader.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="CharacterReaderFactory.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="CharacterStream.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="ConfigurableSpool.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="DependencyContainer.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="DependencyException.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="EmbeddedFile.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Encoder.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Encoding.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="FailoverTransport.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="FileSpool.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="FileStream.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Filterable.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Image.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="InputByteStream.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="IoException.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="KeyCache.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="LoadBalancedTransport.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Mailer.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="MailTransport.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="MemorySpool.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Message.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="MimePart.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="NullTransport.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="OutputByteStream.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Preferences.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="ReplacementFilterFactory.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="RfcComplianceException.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="SendmailTransport.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="SignedMessage.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Signer.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="SmtpTransport.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Spool.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="SpoolTransport.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="StreamFilter.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="SwiftException.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Transport.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="TransportException.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+<file name="Validate.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130305512140000000" remote="130305512140000000" Dst="1" />
+</dwsync>

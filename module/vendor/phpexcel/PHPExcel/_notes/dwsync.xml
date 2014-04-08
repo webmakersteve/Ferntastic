@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="Autoloader.php" server="23.96.41.234//var/www/91ferns/" local="130343734514889019" remote="130343736160000000" Dst="1" />
+<file name="CachedObjectStorageFactory.php" server="23.96.41.234//var/www/91ferns/" local="130343734515029027" remote="130343736180000000" Dst="1" />
+<file name="Calculation.php" server="23.96.41.234//var/www/91ferns/" local="130343734515589059" remote="130343736290000000" Dst="1" />
+<file name="Cell.php" server="23.96.41.234//var/www/91ferns/" local="130343734515819072" remote="130343736310000000" Dst="1" />
+<file name="Chart.php" server="23.96.41.234//var/www/91ferns/" local="130343734515969081" remote="130343736350000000" Dst="1" />
+<file name="Comment.php" server="23.96.41.234//var/www/91ferns/" local="130343734516109089" remote="130343736350000000" Dst="1" />
+<file name="DocumentProperties.php" server="23.96.41.234//var/www/91ferns/" local="130343734516269098" remote="130343736350000000" Dst="1" />
+<file name="DocumentSecurity.php" server="23.96.41.234//var/www/91ferns/" local="130343734516399106" remote="130343736350000000" Dst="1" />
+<file name="Exception.php" server="23.96.41.234//var/www/91ferns/" local="130343734516519112" remote="130343736360000000" Dst="1" />
+<file name="HashTable.php" server="23.96.41.234//var/www/91ferns/" local="130343734516659120" remote="130343736360000000" Dst="1" />
+<file name="IComparable.php" server="23.96.41.234//var/www/91ferns/" local="130343734516769127" remote="130343736360000000" Dst="1" />
+<file name="IOFactory.php" server="23.96.41.234//var/www/91ferns/" local="130343734516899134" remote="130343736360000000" Dst="1" />
+<file name="NamedRange.php" server="23.96.41.234//var/www/91ferns/" local="130343734517039142" remote="130343736580000000" Dst="1" />
+<file name="ReferenceHelper.php" server="23.96.41.234//var/www/91ferns/" local="130343734517299157" remote="130343736640000000" Dst="1" />
+<file name="RichText.php" server="23.96.41.234//var/www/91ferns/" local="130343734517429165" remote="130343736660000000" Dst="1" />
+<file name="Settings.php" server="23.96.41.234//var/www/91ferns/" local="130343734517589174" remote="130343736670000000" Dst="1" />
+<file name="Style.php" server="23.96.41.234//var/www/91ferns/" local="130343734517879190" remote="130343736880000000" Dst="1" />
+<file name="Worksheet.php" server="23.96.41.234//var/www/91ferns/" local="130343734518449223" remote="130343736950000000" Dst="1" />
+<file name="WorksheetIterator.php" server="23.96.41.234//var/www/91ferns/" local="130343734518579230" remote="130343736950000000" Dst="1" />
+<file name="Autoloader.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343734514889019" remote="130343734510000000" Dst="1" />
+<file name="CachedObjectStorageFactory.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343734515029027" remote="130343734510000000" Dst="1" />
+<file name="Calculation.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343734515589059" remote="130343734510000000" Dst="1" />
+<file name="Cell.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343734515819072" remote="130343734510000000" Dst="1" />
+<file name="Chart.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343734515969081" remote="130343734510000000" Dst="1" />
+<file name="Comment.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343734516109089" remote="130343734510000000" Dst="1" />
+<file name="DocumentProperties.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343734516269098" remote="130343734510000000" Dst="1" />
+<file name="DocumentSecurity.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343734516399106" remote="130343734510000000" Dst="1" />
+<file name="Exception.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343734516519112" remote="130343734510000000" Dst="1" />
+<file name="HashTable.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343734516659120" remote="130343734510000000" Dst="1" />
+<file name="IComparable.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343734516769127" remote="130343734510000000" Dst="1" />
+<file name="IOFactory.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343734516899134" remote="130343734510000000" Dst="1" />
+<file name="NamedRange.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343734517039142" remote="130343734510000000" Dst="1" />
+<file name="ReferenceHelper.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343734517299157" remote="130343734510000000" Dst="1" />
+<file name="RichText.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343734517429165" remote="130343734510000000" Dst="1" />
+<file name="Settings.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343734517589174" remote="130343734510000000" Dst="1" />
+<file name="Style.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343734517879190" remote="130343734510000000" Dst="1" />
+<file name="Worksheet.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343734518449223" remote="130343734510000000" Dst="1" />
+<file name="WorksheetIterator.php" server="C:/Users/Stephen/Google Drive/VC/porta.91ferns.com/" local="130343734518579230" remote="130343734510000000" Dst="1" />
+<file name="Autoloader.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343734514889019" remote="130387031400000000" Dst="1" />
+<file name="CachedObjectStorageFactory.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343734515029027" remote="130387031400000000" Dst="1" />
+<file name="Calculation.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343734515589059" remote="130387032000000000" Dst="1" />
+<file name="Cell.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343734515819072" remote="130387032000000000" Dst="1" />
+<file name="Chart.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343734515969081" remote="130387032000000000" Dst="1" />
+<file name="Comment.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343734516109089" remote="130387032000000000" Dst="1" />
+<file name="DocumentProperties.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343734516269098" remote="130387032000000000" Dst="1" />
+<file name="DocumentSecurity.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343734516399106" remote="130387032000000000" Dst="1" />
+<file name="Exception.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343734516519112" remote="130387032000000000" Dst="1" />
+<file name="IComparable.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343734516769127" remote="130387032000000000" Dst="1" />
+<file name="HashTable.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343734516659120" remote="130387032000000000" Dst="1" />
+<file name="IOFactory.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343734516899134" remote="130387032000000000" Dst="1" />
+<file name="NamedRange.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343734517039142" remote="130387032000000000" Dst="1" />
+<file name="ReferenceHelper.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343734517299157" remote="130387032000000000" Dst="1" />
+<file name="RichText.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343734517429165" remote="130387032000000000" Dst="1" />
+<file name="Settings.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343734517589174" remote="130387032000000000" Dst="1" />
+<file name="Style.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343734517879190" remote="130387032000000000" Dst="1" />
+<file name="WorksheetIterator.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343734518579230" remote="130387032000000000" Dst="1" />
+<file name="Worksheet.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343734518449223" remote="130387032000000000" Dst="1" />
+</dwsync>
