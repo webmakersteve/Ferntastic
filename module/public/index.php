@@ -9,7 +9,7 @@
  */
 
 /**
- * Let's load the theme and output it
+ * We just want to tell people that this file has been run
  *
  * @var bool
  */
@@ -37,16 +37,16 @@ define ('__SITE_PATH', $site_path);
  * The full path to the directory which holds "app", WITHOUT a trailing DS.
  *
  */
-if (!defined('ROOT')) {
-	define( 'ROOT', dirname(dirname(dirname(__FILE__))) );
+if (!defined('__ROOT')) {
+	define( '__ROOT', dirname(dirname(dirname(__FILE__))) );
 }
 
 /**
  * The full path to the data directory
  *
  */
-if (!defined('DATA_PATH')) {
-	define( 'DATA_PATH', ROOT . DS . 'data' );
+if (!defined('__DATA_PATH')) {
+	define( '__DATA_PATH', ROOT . DS . 'data' );
 }
 
 /**
@@ -54,12 +54,12 @@ if (!defined('DATA_PATH')) {
  *
  */
  
-if (!defined('WWW_ROOT')) {
-	define('WWW_ROOT', (dirname(__FILE__)));	
+if (!defined('__WWW_ROOT')) {
+	define('__WWW_ROOT', (dirname(__FILE__)));	
 }
 
-if (!defined('WEBROOT_DIR')) {
-	define('WEBROOT_DIR', basename(dirname(__FILE__)));	
+if (!defined('__WEBROOT_DIR')) {
+	define('__WEBROOT_DIR', basename(dirname(__FILE__)));	
 }
 
 /** 
@@ -69,10 +69,10 @@ if (!defined('WEBROOT_DIR')) {
  */
 
 if (!defined('__INCLUDES'))
-	define( '__INCLUDES', ROOT . DS . 'ferntastic'  );
+	define( '__INCLUDES', __ROOT . DS . 'ferntastic'  );
 	
 if (!defined('__APPS'))
-	define( '__APPS', ROOT . DS . 'apps' );
+	define( '__APPS', __ROOT . DS . 'apps' );
 	
 if (!defined('__MODELS'))
 	define( '__MODELS', __INCLUDES . DS . 'mvc' );
