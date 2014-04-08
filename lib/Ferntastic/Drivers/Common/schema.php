@@ -1,5 +1,7 @@
 <?php
 
-interface Driver {
+namespace Ferntastic\Drivers\Common;
+
+interface Schema {
 		
 }

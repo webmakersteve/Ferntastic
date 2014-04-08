@@ -8,24 +8,26 @@
  * @version 0.1
  *
  */
-
+namespace Ferntastic;
  
-/**
- * ResourceError is the Loggable Error thrown when something goes wrong with resources.
- *
- * @package errors
- * @version 0.1
- *
- */
-
-class ResourceError extends LogError {private $type = __CLASS__;}
-
+use Ferntastic\Drivers\Common\DriverImplementation;
+use Ferntastic\Drivers\Resources\Schema\Driver as ResourceDriver;
  
-class ResourceLoader extends DriverImplementation {
+class Resources extends DriverImplementation {
 	
-	protected $DefaultDriver = 'ResourceXMLDriver'; //overrides class category
+	protected static $instance = NULL;
+	protected function __construct() {
+		return $this;
+	}
 	
-	public static function Uses(ResourceDriver $x ) {
+	public static function Invoke() {
+		if (self::$instance === NULL) self::$instance = new self();
+		return self::$instance;
+	}	
+	
+	protected $DefaultDriver = 'Ferntastic\\Drivers\\Resources\\XML'; //overrides class category
+	
+	public static function Uses( ResourceDriver $x ) {
 		self::$Driver = $x;
 	}
 	
@@ -57,9 +59,6 @@ class ResourceLoader extends DriverImplementation {
 	}
 
 }
-
-Fn::AddInvokable('resources', 'ResourceLoader'); //invokable
-//versus Fn::AddCreatable(); which takes tag name and class name or closure
 
 function R( $Type ) {
 	return Fn()->resources->Get( $Type );

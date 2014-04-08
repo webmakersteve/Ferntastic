@@ -1,11 +1,27 @@
 <?php
 
+namespace Ferntastic\Drivers\Resources;
 
-class ResourceXMLDriver extends DefaultDriver implements ResourceDriver {
+use Ferntastic\Drivers\Common\Driver;
+use Ferntastic\Drivers\Resources\Schema\Driver as ResourceDriver;
+
+class XML extends Driver implements ResourceDriver {
 	
-	public function get( $key );
-	public function set();
-	public function toArray();
+	protected static $instance = NULL;
+	protected function __construct() {
+		return $this;
+	}
+	
+	public static function Invoke() {
+		if (self::$instance === NULL) self::$instance = new self();
+		return self::$instance;
+	}	
+	
+	public function Get( $key ) {}
+	public function Set() {}
+	public function toArray() {
+		
+	}
 	public function LoadResources( $Specification ) {
 		if (!is_dir( $the_path) ) throw new ResourceError("Couldn't read directory: ".$the_path);
 		if ($dir = opendir($the_path)) {
@@ -83,6 +99,10 @@ class ResourceXMLDriver extends DefaultDriver implements ResourceDriver {
 		} else throw new ResourceError("Couldn't Read Resources"); //end opening the directory
 
 	}
+		
+	public function LoadedTypes() {
+		
+	} //returns array of loaded types
 		
 }
 
