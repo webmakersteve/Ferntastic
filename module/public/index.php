@@ -38,7 +38,7 @@ define ('__SITE_PATH', $site_path);
  *
  */
 if (!defined('ROOT')) {
-	define( 'ROOT', dirname(dirname(__FILE__)) );
+	define( 'ROOT', dirname(dirname(dirname(__FILE__))) );
 }
 
 /**
@@ -69,7 +69,7 @@ if (!defined('WEBROOT_DIR')) {
  */
 
 if (!defined('__INCLUDES'))
-	define( '__INCLUDES', ROOT . DS . 'lib' );
+	define( '__INCLUDES', ROOT . DS . 'ferntastic'  );
 	
 if (!defined('__APPS'))
 	define( '__APPS', ROOT . DS . 'apps' );
@@ -95,7 +95,7 @@ if (!empty($failed)) {
 	trigger_error("There was a problem loading the ferntastic core. Please check your directory structure and possibly try again", E_USER_ERROR);
 }
 
-Fn::load_extension('Switcher', 'Dispatcher');
+Fn::load_extension('Dispatcher');
 $Dispatcher = new Dispatcher();
 $Dispatcher->dispatch(
 	new SiteRequest(),

@@ -68,7 +68,7 @@ class NoLogError extends Exception {
 	
 	function __construct($res_id, $data = null, Exception $previous = null) {
 		global $errormsg, $resources, $fns;
-		if (!isset($fns) or !is_object($fns)) $GLOBALS['fns'] = new Fn();
+		$fns = Fn();
 		if (is_object($fns) and method_exists($fns, 'load_extension')) {
 			
 			$fns->load_extension('resources');

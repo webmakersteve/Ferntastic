@@ -9,9 +9,6 @@
  *
  */
 
-if (!function_exists('Fn')) die();
-if (!defined('RESOURCE_FP')) define('RESOURCE_FP',  dirname(dirname(EXTPATH)) . DIRECTORY_SEPARATOR . 'res');
-
  
 /**
  * ResourceError is the Loggable Error thrown when something goes wrong with resources.
@@ -104,98 +101,21 @@ class Resources {
  
 class ResourceLoader {
 	
-	protected $resources = array(); //holds all of the resource data lowest priority to highest
+	private static $Driver = NULL;
 	
-	public function load( $the_path ) {
+	public static function uses(ResourceDriver $x ) {
+		self::$Driver = $x;
+	}
 	
-		/**
-		 * Constructs the Resources. Only method in class. 
-		 * Goes through the RESOURCE_FP. Loads all the different XML files in the directory provided.
-		 * @param string Optional list of params that would be the files loaded. If specific, will only load the specified resources.
-		 
-		 */
-		 $tres = "";
-		//first it needs to turn the ID into the appropriate filepath, and then it executes it. If $id is a string, it will go right to the filepath
+	protected function LoadAll( $Specification ) {
 	
 		try {
-			if (!is_dir( $the_path) ) throw new ResourceError("Couldn't read directory: ".$the_path);
-			if ($dir = opendir($the_path)) {
-				
-				while (($file = readdir($dir)) !== false) {
-					if ( !preg_match("#[.]xml$#i", $file) ) {
-						//these are for non xml files
-					} else {
-						
-						//this gives us the new dirs
-						//now we need to find the widget with the identifying 
-						//now we have the data inside the widgets folder
-						
-						//load the xml sheet
-						$xmlfp = $the_path . DIRECTORY_SEPARATOR . $file;
-						
-						if (file_exists($xmlfp)) {
-				
-							$contents = file_get_contents($xmlfp);
-							if (!$contents) continue;
-							$doc = new SimpleXMLElement($contents);
-							
-							$catname = preg_replace('#[.]xml$#i', '', basename($xmlfp));
-							$t = &$tres->$catname;
-							$atts = &$tres->attr->$catname;
-							
-							foreach ($doc->children() as $k => $child) {
-								
-								if ($k == "array") {
-									
-									$name = (string) $child->attributes()->name;
-									$attr = (array) $child->attributes();
-									
-									//we need to find what type it is to get the next tags
-									@$type = $attr['type'];
-									$type = $attr['@attributes']['type'];
-									
-									$value = array();
-									
-									foreach ($child->$type as $subchild):
-										$k = (string) $subchild->attributes()->key;
-										$value[$k] = (string) $subchild;
-									endforeach;
-									
-									$attributes = (object) $attr['@attributes'];
-									$resValue = $value;
-									
-								} else {
-									
-									$name = (string) $child->attributes()->name;
-									$attr = (array) $child->attributes();
-									$value = (string) $child;
-									
-									$attributes = (object) $attr['@attributes'];
-									$resValue = (string) $value;
-									
-								}
-								
-								$t->$name = $resValue;
-								//supressing warning because I know it can be blank. But the check is then empty instead of isset which is better
-								@$atts->$name = (object) $attributes;
-								
-							}
-							
-						} else throw new ResourceError("Couldn't read ".basename($xmlfp));
-							
-					}//end checking the folders
-					
-				} //end reading the directory
-				
-				if ($dir) closedir($dir);
-				$this->pathsTried[] = $the_path;
-				$this->resources[md5($the_path)] = $tres; //we want to use a token of the key to do this so we can reference the specific file later, too
-				
-			} else throw new ResourceError("Couldn't Read Resources"); //end opening the directory
-		
+			
+			self::$Driver->LoadResources( $Specification );
+			
 		} catch (ResourceError $e) {
 			$e->handleMe();
-		} //end try catch
+		} 
 		
 	}
 	

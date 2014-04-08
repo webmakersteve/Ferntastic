@@ -165,13 +165,10 @@
 <file name="class.paypal.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130142496890000000" remote="130387031400000000" Dst="1" />
 <file name="class.presets.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="129821890070000000" remote="130387031400000000" Dst="1" />
 <file name="class.registry.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130209033070000000" remote="130387031400000000" Dst="1" />
-<file name="class.request (Stephen Parente's conflicted copy 2014-03-01).php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343766160000000" remote="130387031400000000" Dst="1" />
 <file name="class.request.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130372545520000000" remote="130387031400000000" Dst="1" />
 <file name="class.resources.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130350503191599950" remote="130387031400000000" Dst="1" />
 <file name="class.response.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130314229836117135" remote="130387031400000000" Dst="1" />
-<file name="class.router (Stephen Parente's conflicted copy 2014-02-16).php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130344658770000000" remote="130387031400000000" Dst="1" />
 <file name="class.router.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130372543240000000" remote="130387031400000000" Dst="1" />
-<file name="class.router (Stephen Parente's conflicted copy 2014-03-01).php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130344658770000000" remote="130387031400000000" Dst="1" />
 <file name="class.RSA.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130268855700000000" remote="130387031400000000" Dst="1" />
 <file name="class.site.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="129924778420000000" remote="130387031400000000" Dst="1" />
 <file name="class.switcher.php" server="waws-prod-blu-005.ftp.azurewebsites.windows.net/site/wwwroot/" local="130343763043430758" remote="130387031400000000" Dst="1" />

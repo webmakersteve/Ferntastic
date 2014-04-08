@@ -58,7 +58,13 @@ class Fn {
 	
 	private $start;
 	
-	public function __construct() {
+	private static $instance = NULL;
+	public static function Invoke() {
+		if (self::$instance === NULL) self::$instance = new Fn();
+		return self::$instance;
+	}
+	
+	private function __construct() {
 		
 		//welcome to 91ferns. Log upon construction		
 		
@@ -74,15 +80,6 @@ class Fn {
 		
 	}
 	
-	public function __destruct() {
-		
-		//cleanup, cleanup
-		//first close DB connections
-		global $db_object;
-		if ($db_object!=null) mysqli_close( $db_object );
-			
-		
-	}
 	
 	function timelength() {
 		
@@ -316,8 +313,7 @@ if (!defined('ABSPATH')) define('ABSPATH', dirname( __FILE__ ) );
  */
  
 if (!defined('EXTPATH')) define('EXTPATH', dirname( dirname ( __FILE__ ) ) );
-$fns = $GLOBALS['fns'] = new Fn();
-function Fn() {global $fns; return $fns;}
+function Fn() {return Fn::Invoke();}
 
 //now we can load the necessary modules
 Fn()->load_extension('errors', 'mysql'); //first and foremost, we need to include the error library resource framework for errors and the mysql framework for DB connection.
