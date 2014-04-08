@@ -20,98 +20,23 @@
 
 class ResourceError extends LogError {private $type = __CLASS__;}
 
-/**
- * Resource is a private class that is created when the Resources class interprets the data.
- * Data is accessed through the resource object when it is constructed. Methods are not used often.
- *
- * <code>
- * Resources()->string->name; //string is the MetaCategory of the specific resource.
- * </code>
- *
- * @package resources
- * @version 0.1
- *
- */
-
-class Resource {
-	
-	public $value;
-	public $attr;
-	private $attrArr = array();
-	
-	function __construct( $data ) {
-		
-		$attrs = $data->attr;
-		$this->value = $data->value;
-		
-		$this->attr = new stdClass();
-		
-		foreach( $attrs as $k => $v ):
-			$a = &$this->attr;
-			$this->attrArr[$k]=$v;
-			$a->{$k} = !empty($v) ? $v : null;
-		
-		endforeach;
-		
-	}
-	
-	public function getProp( $key ) {
-		
-		if (isset($this->attrArr[$key])) return $this->attrArr[$key];
-		else return false;
-		
-	}
-	
-	function __toString() {
-		if (is_array($this->value)) return serialize($this->value);
-		return $this->value;
-	}
-
-}
-
-class Resources {
-	
-	private $type;
-	
-	function __construct( $data ) {
-		
-		foreach ( $data as $type => $instances ) {
-			
-			$this->{$type} = new stdClass();
-			$ref = &$this->$type;
-			foreach ($instances as $k => $obj) {
-			
-				$ref->$k = new Resource($obj);
-			
-			}
-			
-		} //endforeach
-		
-	} //end __construct
-
-} //end Resources
-
-/**
- * ResourceError is the Loggable Error thrown when something goes wrong with resources.
- *
- * @package errors
- * @version 0.1
- *
- */
  
-class ResourceLoader {
+class ResourceLoader extends DriverImplementation {
 	
-	private static $Driver = NULL;
+	protected $DefaultDriver = 'ResourceXMLDriver'; //overrides class category
 	
-	public static function uses(ResourceDriver $x ) {
+	public static function Uses(ResourceDriver $x ) {
 		self::$Driver = $x;
 	}
 	
-	protected function LoadAll( $Specification ) {
+	protected $loadedTypes = array();
 	
+	protected function LoadAll( $Specification ) {
+		
 		try {
-			
+			if (!$this->HasSetDriver()) throw new DriverError( ERROR_NO_DRIVER_SET );
 			self::$Driver->LoadResources( $Specification );
+			$this->loadedTypes = self::$Driver->LoadedTypes();
 			
 		} catch (ResourceError $e) {
 			$e->handleMe();
@@ -119,51 +44,25 @@ class ResourceLoader {
 		
 	}
 	
-	private $default;
-	private $pathsTried = array();
-	
-	public function get ( $the_path=null ) {
-		if ($the_path == null && !empty($this->default)) $the_path = $this->default;
-		elseif (isset($this->resources[md5($the_path)])) return $this->resources[md5($the_path)];
-		//elseif ($the_path == null && empty($this->default)) throw new ResourceError('no_path_set');
+	public function Get( $type ) {
+		//this returns an object so it is accessed in this manner
+		//R()->strings->awesome
+		//R() returns ResourceLoader->Get();
+		if (!in_array( $type, $this->loadedTypes )) return NULL;
+		$category = self::$Driver->Get( $type ); //this will give us 
+		if ($type instanceof ResourceCategory) {
+			return $type->toObject();	
+		} else throw new ResourceError( ERROR_RESOURCE_INVALID_CATEGORY );
 		
-		//now we need to iterate through all of them in order and merge them but make sure default is merged last
-		$returnResourcesObject = array();
-		foreach( $this->pathsTried as $path ) {
-			if ($path == $the_path) continue;
-			if (isset($this->resources[md5($path)])) $returnResourcesObject = array_merge( (array) $this->resources[md5($path)], $returnResourcesObject );	
-		}
-		
-		//now merge the default
-		if (isset($this->resources[md5($the_path)]))
-			$returnResourcesObject = array_merge( (array) $this->resources[md5($the_path)], $returnResourcesObject );	
-		else {
-			$this->load( $the_path ); //try loading it
-			if (isset($this->resources[md5($the_path)]))
-				$returnResourcesObject = array_merge( (array) $this->resources[md5($the_path)], $returnResourcesObject );
-			else return;
-		}
-		
-		return (object) $returnResourcesObject;
 	}
-	
-	public function setDefault( $the_path ) {
-		if (array_key_exists(md5($the_path), $this->resources)) $this->default=$the_path;
-		else return false;
-	}
-	
-	public function dumpLocations() { print_r($this->pathsTried); }
 
 }
 
-$l = new ResourceLoader(); //initializes resources
-$l->load( RESOURCE_FP ); //this wil lload our first resources into the object
-$l->setDefault( RESOURCE_FP ); //initial default
+Fn::AddInvokable('resources', 'ResourceLoader'); //invokable
+//versus Fn::AddCreatable(); which takes tag name and class name or closure
 
-Fn::add('resources', $l); //invokable
-
-function R() {
-	return Fn()->resources;	
+function R( $Type ) {
+	return Fn()->resources->Get( $Type );
 }
 
 ?>

@@ -268,39 +268,7 @@ class Fn {
 		endif;
 		
 	}
-		
-	/**
-	 * This function loads an extension in the 91ferns library. The extensions are in an array to prevent bad data.
-	 */
-		
-	private $settings = array();
-		
-	/**
-	 * Set function defines a setting.
-	 * This can be used later within the function context
-	 * @return boolean Returns false on failure or true on success
-	 *
-	 */
-		
-	public function set( $key, $value ) {
 	
-		$this->settings[$key]=$value;
-		return true;
-		
-	}
-	
-	/**
-	 * Get function gets value of a setting.
-	 * This can be used later within the function context
-	 * @return boolean Returns false on failure or true on success
-	 *
-	 */
-	
-	public function get( $key ) {
-		
-		return isset($this->settings[$key]) ? $this->settings[$key] : false;
-			
-	}
 	
 	
 }

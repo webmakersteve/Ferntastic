@@ -29,7 +29,7 @@ class Nonce {
 			
 			$noncetime = time();
 			
-			$presql = "SELECT nonce,time FROM `nonce` WHERE ip = '%s' AND acc = %d AND active = 1 LIMIT 1";
+			$presql = "SELECT nonce,time FROM `nonce` WHERE ip = '%s' AND acc = %d AND active = 1 LIMIT 1"; //this cannot be as queries must be filtered through fquery object
 			$sql = sprintf($presql, e($_SERVER['REMOTE_ADDR']), $nonceuser); //make the SQL statement
 			
 			try {

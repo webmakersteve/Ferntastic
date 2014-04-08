@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * User cart. Used to connect the user to a database associated with the cart.
  * This allows data to be assigned to a user and the gives the user the ability to change 
@@ -407,5 +406,3 @@ class Paypal {
    }
    
 }
-
-?>
