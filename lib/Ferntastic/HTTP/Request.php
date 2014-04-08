@@ -1,5 +1,7 @@
 <?php
 
+namespace Ferntastic\HTTP;
+
 /**
  * class.request.php
  *
@@ -9,7 +11,7 @@
  * third party apps
  */
  
-class SiteRequest {
+class Request {
 	
 	public static $requestArray = array();
 	public function getData() {return self::$requestArray;}
@@ -196,4 +198,4 @@ RequestData::addValidator('password', function($s) {
 	else return true;
 });
 
-Fn::add('Request', new SiteRequest() );
+\Fn::add('Request', new Request() );

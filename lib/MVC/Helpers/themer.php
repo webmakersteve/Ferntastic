@@ -5,6 +5,8 @@
  * @package 91ferns
  */
 
+namespace MVC\Helpers;
+
 class Themer extends Helper {
 	public $config;
 	public $basePath;

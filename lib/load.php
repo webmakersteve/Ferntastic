@@ -8,10 +8,9 @@
  */
  
 /** Define ABSPATH as this file's directory. It is from this path that we will get the other files loaded */
-define( 'ABSPATH', dirname(__FILE__) . '/' );
 
 error_reporting( E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR | E_USER_WARNING | E_RECOVERABLE_ERROR );
 
 //now we must load the config file
 
-require_once( ABSPATH . 'config.php' ); 
+require_once( __LIB . 'config.php' ); 

@@ -1,24 +1,11 @@
 <?php
-class Storage {
-	private static $alreadyIncluded = array();
-	public static function inc( $filePath ) {
-		if (in_array($filePath, Storage::$alreadyIncluded)) return false;
-		if (file_exists( $filePath )) {
-			include_once( $filePath );
-			self::$alreadyIncluded[] = $filePath;
-			return true;
-		}
-		return false;
-	}
-}
-function safe_include( $filePath ) {
-	trigger_error( "safe include is deprecated. use Storage::inc Instead" );
-	return Storage::inc( $filePath );
-}
 
-function remove_trailing_s( $str ) {
-	return preg_replace("#s$#i", "", $str);	
-}
+namespace Ferntastic\Routing;
+
+use Ferntastic\HTTP\Request;
+use MVC\Common\Controller;
+use MVC\Common\Model;
+
 
 class Dispatcher {
 	
@@ -48,7 +35,7 @@ class Dispatcher {
 	
 	protected $methodArgs = array();
 	
-	function dispatch ( SiteRequest $request=null, $response=null ) {
+	function dispatch ( Request $request=null, $response=null ) {
 		
 		/*
 		 * This is where naming conventions become important
@@ -68,7 +55,7 @@ class Dispatcher {
 		));
 		
 		//first check the routes to see if there is a rule to where this goes
-		$routes = Router::getRoutes(new SiteRequest());
+		$routes = Router::getRoutes(new Request());
 		$this->methodArgs = Router::getMethodArgs();
 		
 		$topLevelRequest = $routes[0];

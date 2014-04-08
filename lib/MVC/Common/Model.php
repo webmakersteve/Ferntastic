@@ -1,5 +1,7 @@
 <?php
 
+namespace MVC\Common;
+
 /**
  * Models deal with recieving data from external sources
  *

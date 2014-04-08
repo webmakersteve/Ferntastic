@@ -1,6 +1,8 @@
 <?php
 
-if (!function_exists('Fn')) exit;
+namespace Ferntastic\Routing;
+
+use Ferntastic\HTTP\Request;
 
 class Router {
 	
@@ -45,7 +47,7 @@ class Router {
 			
 	}
 	
-	public static function getRoutes ( SiteRequest $request ) {
+	public static function getRoutes ( Request $request ) {
 		
 		//hostname is prefix. Go through that first
 		

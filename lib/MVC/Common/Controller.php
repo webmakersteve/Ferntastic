@@ -1,5 +1,7 @@
 <?php
 
+namespace MVC\Common;
+
 /**
  * Controllers deal with the controlling of the models and views.
  *
