@@ -30,16 +30,8 @@ define('PASSWORD_REQUEST_EXPIRE', 60*60*12);
 date_default_timezone_set('America/New_York');
 
 
-/**
- * For developers: debugging mode.
- *
- * Change this to true to enable the display of notices during development.
- */
-define('DEBUG_MODE', true);
-
 //Now we need to get the FernPath, i.e. directory with the resources and fQuery
 define( "FRAMEWORKS", ABSPATH . "ferntastic/" );
 define( "INC", ABSPATH . "includes/" );
 
 require( ABSPATH . "settings.php" );
-Fn()->load_extension('user');
