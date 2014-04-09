@@ -163,7 +163,6 @@ class Fn {
             }
             $fileName .= str_replace('_', DIRECTORY_SEPARATOR, $ClassName) . ".php";
 			$path = ($inc !== null ? $inc . DIRECTORY_SEPARATOR : '') . $fileName ;
-			echo $path . "\n\n";
             require $path;
 			if (class_exists($ClassName)) return true;
         }

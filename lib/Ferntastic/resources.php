@@ -12,6 +12,7 @@ namespace Ferntastic;
  
 use Ferntastic\Drivers\Common\DriverImplementation;
 use Ferntastic\Drivers\Resources\Schema\Driver as ResourceDriver;
+use Ferntastic\Errors\ResourceError;
  
 class Resources extends DriverImplementation {
 	
@@ -37,25 +38,63 @@ class Resources extends DriverImplementation {
 		
 		try {
 			if (!$this->HasSetDriver()) throw new DriverError( ERROR_NO_DRIVER_SET );
-			self::$Driver->LoadResources( $Specification );
-			$this->loadedTypes = self::$Driver->LoadedTypes();
+			$res = self::$Driver->LoadResources( $Specification );
+			if (!is_array($res)) throw new ResourceError( ERROR_RESOURCES_DRIVER_EXPECTED_ARRAY );
+			
+			$this->Resources[md5($Specification)] = $res;
+			$this->loadedSpecifications[] = $Specification;
+			return true;
 			
 		} catch (ResourceError $e) {
 			$e->handleMe();
+			return false;
 		} 
 		
+	}
+	
+	protected $Specification = '.';
+	protected $loadedSpecifications = array();
+	
+	public function setDirectory( $Directory ) {
+		$this->Specification = $Directory;	
+	}
+	
+	protected $Resources;
+	protected $Map = array();
+	protected function Type( $type ) {
+		$spec = md5($this->Specification);
+		$cwr = $this->Resources[$spec];
+		$keys = array_keys( $cwr );
+		//check map
+		if (!array_key_exists($spec, $this->Map)) $this->Map[$spec] = array();
+		if (array_key_exists( $type, $this->Map[$spec] )) $k = $this->Map[$spec][$type];
+		else $k = preg_grep( sprintf('#%ss?#i', $type), $keys );
+		if ($k) {
+			$k = array_values($k);
+			$k = $k[0];
+			$this->Map[$spec][$type] = (string) $k;
+			return $cwr[(string) $k];
+		}
+		return NULL;
 	}
 	
 	public function Get( $type ) {
 		//this returns an object so it is accessed in this manner
 		//R()->strings->awesome
 		//R() returns ResourceLoader->Get();
-		if (!in_array( $type, $this->loadedTypes )) return NULL;
-		$category = self::$Driver->Get( $type ); //this will give us 
-		if ($type instanceof ResourceCategory) {
-			return $type->toObject();	
-		} else throw new ResourceError( ERROR_RESOURCE_INVALID_CATEGORY );
+		if (!$this->specHasBeenLoaded())
+			if (!$this->LoadAll( $this->Specification )) throw new ResourceError( ERROR_RESOURCES_NO_LOAD ); //resources were not loaded
 		
+		$category = $this->Type( $type ); //this will give us
+		if ($category === NULL) return NULL;
+		else return $category; 
+		
+	}
+	
+	protected function specHasBeenLoaded( $Spec = NULL ) {
+		if ($Spec === NULL) $Spec = $this->Specification;
+		if (!in_array( $Spec, $this->loadedSpecifications )) return false;
+		return true;
 	}
 
 }
