@@ -4,9 +4,13 @@ namespace Ferntastic\Formatting;
 
 class Strings {
 	
-	public function removeTrailingS( $string ) {
+	public static function removeTrailingS( $string ) {
 		return preg_replace("#s$#i", "", $string );	
 	}
-		
+
+    public static function removeQuotes( $string ) {
+        return $string;
+    }
+
 }
 
