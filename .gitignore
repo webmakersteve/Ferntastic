@@ -1,0 +1,9 @@
+.idea
+*.log
+*.swp
+
+/module/config
+_notes
+desktop.ini
+
+.DS_Store
