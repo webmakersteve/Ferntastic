@@ -18,20 +18,43 @@ namespace Ferntastic\Drivers\Database;
  
 use Ferntastic\Errors\NoLogError;
 use Ferntastic\Drivers\Database\Schema\Driver as DatabaseDriver;
+use Ferntastic\Drivers\Common\Driver;
 use Ferntastic\Errors\DatabaseError;
  
 /**
  * MYSQL Exception class.
  */
 
-class MySQL implements DatabaseDriver {
-	
-	protected $usingTable = NULL;
+class MySQL extends Driver implements DatabaseDriver  {
+
+    protected static $instance = NULL;
+    protected function __construct() {
+        return $this;
+    }
+
+    public static function Invoke() {
+        if (self::$instance === NULL) self::$instance = new self();
+        return self::$instance;
+    }
+
+    protected $usingTable = NULL;
 	protected function checkIfTableSet() {
 		if ($this->usingTable === NULL) throw new DatabaseError( ERR_MYSQL_NO_TABLE_SELECTED );	
 	}
 	
-	
+	public function getColumns( $Collection ) {
+        $sql = sprintf("SHOW COLUMNS FROM %s", $this->Escape($Collection));//this may save time
+
+        $this->query( $sql );
+
+        $columns = array();
+
+        while ($r = $this->assoc()) {
+            $columns[] = $r['Field'];
+        }
+        print_r($columns);
+    }
+
 	public function Insert( $Values ) {
 		$this->checkIfTableSet();
 			
@@ -54,13 +77,79 @@ class MySQL implements DatabaseDriver {
 		return $this->InsertID();
 		
 	}
-	public function Escape($x) {return $x;}
+
+    /**
+     * Escape function
+     *
+     * @param $val The value to be escaped
+     * @return Returns the escaped string
+     *
+     */
+
+	public function Escape($val) {
+
+        $val = (string) $val;
+        if (!$this->db_object) throw new NoLogError('nodbobj');
+        return mysqli_real_escape_string( $this->db_object, $val );
+    }
+
 	public function Delete( $Conditions ) {
 		$this->checkIfTableSet();
 	}
-	public function Find( $Conditions ) {
-		$this->checkIfTableSet();
-	}
+
+    /**
+     * @var string $sqlBefore This is a pre-formatted SQL statement used in a sprintf function to add the parameters in.
+     * @constantvar
+     */
+
+    const sqlBefore = "SELECT SQL_CALC_FOUND_ROWS %s FROM `%%s` WHERE %s %s %s";
+
+    /**
+     * Function Find uses the $stmt array to make a real SQL statement.
+     *
+     * This function uses the loaded statements to create a SQL statement to be executed after being filled in
+     * with the table name. Uses priority first, then non priority statements.
+     *
+     * @return string The SQL statement with one variable %s to be used with sprintf($return, $tablename);
+     *
+     * @access public
+     */
+
+    public function Find( $stmts ) {
+        $this->checkIfTableSet();
+        print_r($stmts);
+        $sql_array = array(0=>'', 1=>'', 2=>'', 3=>''); //the first array. 4 keys correlate with 4 '%s'
+        foreach ( $stmts as $pl => $v ) { //start cycling through the statements.
+
+            $curr = &$sql_array[$pl]; //simplify
+            $curr = ""; //initialize
+            if ( array_key_exists("prio", $v) ) { //if there are priority keys, execute them first
+                foreach ( $v['prio'] as $new ) {
+                    if ($pl == 1) $curr .= $new." AND ";
+                    elseif ($pl == 0) $curr .= $new.",";
+                    else $curr .= $new." ";
+                }
+            }
+
+            if ( array_key_exists("none", $v) ) { //If there are non-priority indexes, do them.
+                foreach ( $v['none'] as $new ) {
+                    if ($pl == 1) $curr .= $new." AND ";
+
+                    elseif ($pl == 0) $curr .= $new.",";
+                    else $curr .= $new." ";
+                }
+            }
+
+            if ($pl == 1) $curr = preg_replace('# *AND *$#i', '', $curr); //for placement 1 we need to remove the last AND
+            else $curr = preg_replace('# *[,]+ *$#i', '', $curr); //for all other placements there will be a trailing comma.
+        }
+
+        if ( empty($sql_array[1]) ) $sql_array[1] = "1 = 1"; //if there is nothing in the first SQL array, populate it with filler text
+        $ret = sprintf( self::sqlBefore, $sql_array[0], $sql_array[1], $sql_array[2], $sql_array[3] ); //build the STATEMENT from the format
+        echo $ret;
+        return $ret; //return the new statement
+    }
+
 	public function Update( $Conditions, $Changes ) {
 		$this->checkIfTableSet();
 	}
@@ -106,8 +195,13 @@ class MySQL implements DatabaseDriver {
 		else throw new DatabaseError( ERR_MYSQL_CONN_ERROR, $db_object ? mysqli_error( $db_object ) : array() );
 	}
 	//end configuration
+
+    /*
+     * Old Functions below
+     * ====================================================================================
+     */
 	
-	function override_default_connection( $dbname = null, $dbuser = null, $dbpassword = null, $dbhost = null ) {
+	protected function override_default_connection( $dbname = null, $dbuser = null, $dbpassword = null, $dbhost = null ) {
 		
 		if ($dbname == null) $dbname = self::$db_name;
 		if ($dbuser == null) $dbuser = self::$db_user;
@@ -119,8 +213,8 @@ class MySQL implements DatabaseDriver {
 		return $this->db_object;
 		
 	}
-	
-	function add_connection( $reference, $dbname = null, $dbuser = null, $dbpassword = null, $dbhost = null ) {
+
+    protected function add_connection( $reference, $dbname = null, $dbuser = null, $dbpassword = null, $dbhost = null ) {
 
 		if ($dbname == null) $dbname = self::$db_name;
 		if ($dbuser == null) $dbuser = self::$db_user;
@@ -131,15 +225,15 @@ class MySQL implements DatabaseDriver {
 		$this->db_extensions[$reference] = mysqli_connect( $dbhost, $dbuser, $dbpassword, $dbname );
 		return $this->db_extensions[$reference];
 	}
-	
-	function use_connection( $connID ) {
+
+    protected function use_connection( $connID ) {
 		if (isset( $this->db_extensions[$connID] )) {
 			$this->db_object = $this->db_extensions[$connID];
 			return $this->db_object;
 		} else return false;
 	}
-	
-	function is_connected( ) {
+
+    protected function is_connected( ) {
 		if (isset($this->db_object) and !$this->db_object->connect_error) return true;
 		else return false;	
 	}
@@ -151,10 +245,10 @@ class MySQL implements DatabaseDriver {
 	 * @return Returns false on failure, or query identifier on success
 	 *
 	 */
-	
-	public $last_query = '';
-	
-	function query( $sql ) {
+
+    protected $last_query = '';
+
+    protected function query( $sql ) {
 		
 		if (!isset($this->db_object) or !$this->db_object) {
 			throw new DatabaseError('nodbobj');
@@ -175,8 +269,8 @@ class MySQL implements DatabaseDriver {
 	 *
 	 *
 	 */
-	 
-	function insert_id() {
+
+    protected function insert_id() {
 		
 		return mysqli_insert_id( $this->db_object );
 		
@@ -186,14 +280,14 @@ class MySQL implements DatabaseDriver {
 	 *
 	 *
 	 */
-	
-	function affected_rows() {
+
+    protected function affected_rows() {
 		
 		return mysqli_affected_rows( $this->db_object );
 			
 	}
-	
-	function num_rows( $q = null ) {
+
+    protected function num_rows( $q = null ) {
 		
 		if ($q == null) {
 			$q = isset($this->last_query) ? $this->last_query : false;
@@ -202,8 +296,8 @@ class MySQL implements DatabaseDriver {
 		if ($q) return mysqli_num_rows( $q ); else return false;
 		
 	}
-	
-	function assoc( $q = null ) {
+
+    protected function assoc( $q = null ) {
 		
 		if ($q == null) {
 			$q = isset($this->last_query) ? $this->last_query : false;
@@ -212,8 +306,8 @@ class MySQL implements DatabaseDriver {
 		if ($q) return mysqli_fetch_assoc( $q ); else return false;
 		
 	}
-	
-	function arr( $q = null ) {
+
+    protected function arr( $q = null ) {
 		
 		if ($q == null) {
 			$q = isset($this->last_query) ? $this->last_query : false;
@@ -230,8 +324,8 @@ class MySQL implements DatabaseDriver {
 	 * @param $tbl_name The name of the table to be loaded.
 	 * @return boolean Returns true if the table exists, false otherwise
 	 */
-	
-	function table_exists( $tbl_name ) {
+
+    protected function table_exists( $tbl_name ) {
 		
 		$sql = "SELECT table_name FROM information_schema.tables WHERE table_schema = '".DB_NAME."' AND table_name = '".$tbl_name."'";
 		$q = $this->query($sql);
@@ -246,8 +340,8 @@ class MySQL implements DatabaseDriver {
 	 * Lookup function simplifies getting MySQL data from another table
 	 *
 	 */
-	 
-	public static function lookup( $table, $id, $stringkey, $lookupkey = "id" ) {
+
+    protected static function lookup( $table, $id, $stringkey, $lookupkey = "id" ) {
 	
 		$keys = array();
 		$keystring = '';
@@ -280,209 +374,6 @@ class MySQL implements DatabaseDriver {
 		
 	}
 	
-	/**
-	 * Escape function
-	 *
-	 * @param $val The value to be escaped
-	 * @return Returns the escaped string
-	 *
-	 */
-	
-	function e( $val ) {
-		
-		$val = (string) $val;
-		if (!$this->db_object) throw new NoLogError('nodbobj');
-		return mysqli_real_escape_string( $this->db_object, $val );
-		
-	}
 
-}
 
-/**
- * Holds the DB Object for use in the procedural MySQL Abstraction
- * 
- * This Backup class is used to backup SQL to the database. It can also load backup data and revert what has been undone as long as it is
- * of the Backup data class type
- *
- * @abstract Loads backup data from MYSQL fBackup table
- * @staticvar boolean $operable determines whether or not the class should execute its functions. This is determined on the construction of the first class.
- * @staticvar integer Instances of currently open Backup engines.
- */
-
-class MySQLBackup {
-	
-	static $operable; //is it operable?
-	static $instances = 0; //number of open instances
-	
-	const TBL = 'fBackup';
-	
-	/**
-	 * Constructor class has no Parameters.
-	 * 
-	 * @return True on successful creation, false on failure
-	 */
-	
-	function __construct() {
-		
-		self::$instances = $working = table_exists( self::TBL );
-		
-		try {
-			
-			if (!$working) {
-				throw new DatabaseError("Can't write to `fBackup`. Does it exist?");
-			}
-			
-			return true;
-		
-		} catch (DatabaseError $e) {
-			$e->handleme();
-			return false;	
-		}
-		
-	}
-	
-	/**
-	 * This method formats a SQL statement for backup. It parses the statement with REGEX to learn what it is trying to do.
-	 *
-	 * @param $sql The statement to back up
-	 * @return mixed The formatted SQL statement array on successful creation, false on failure or if it can't be backed up
-	 */
-	
-	private function formatSQL( $sql ) {
-		
-		if (!self::$instances) return false;
-		
-		$sql = preg_replace( "#(low_priority|ignore|temporary|delayed|into)#i", "", $sql ); //get rid of keywords we don't care about
-		
-		$return = array();
-		$words = split(' ', strtolower($sql)); //the words array now contains every word in the statement.
-		
-		if ( count($words) < 1 ) return false;
-		
-		$type = $words[0]; //the first word will be the type of statement it is. We don't want to back this up if it is a select statement.
-		if ( $type == "select" or $type == "insert" ) return false;
-		
-		//as of here, it is not a select statement. If it is an UPDATE statement, we need to back-up the old data for the column that is being updated
-		$return['SQL'] = $sql;
-		
-		if (($temp = array_search("where", $words)) != null) { //if there is a condition
-					
-			//there is a condition. Extract it. The index it stops at will either be the end, ORDER or LIMIT
-			$start = $temp;
-			$end = count($words);
-			
-			//see if we need to change the end.
-			if ( ($temp = array_search("order", $words)) != null) {
-				$end = $temp;
-			} elseif ( ($temp = array_search("limit", $words)) != null) {
-				$end = $temp; 
-			}
-			
-			$condition = array();
-			for ($i=(int) $start; $i<$end; $i++) {
-				$condition[] = $words[$i];
-			}
-			
-			$condition = implode(' ', $condition);
-			
-			$return['CONDITION'] = $condition;
-			
-		}
-		
-		switch ($type) {
-			
-			case 'update':
-				
-				$table = $words[1];
-				$return['TYPE'] = "UPDATE";
-				
-				//we need to get the backup SQL for the update. Only get the rows we need.
-				if (!isset($condition) or !$condition) $condition = '';
-
-				//what are we selecting?
-				//this will start after the SET statement and END with WHERE, ORDER BY, or LIMIT, or END in that order
-				$end = count($words);
-				if ( ($temp = array_search("where", $words) ) !== null) $end = $temp;
-				elseif ( ($temp = array_search("order", $words) ) !== null) $end = $temp;
-				elseif ( ($temp = array_search("limit", $words) ) !== null) $end = $temp;
-				
-				//now we have the end let's put the setting together
-				$start = array_search("set", $words) +1;
-				$sets = array();
-				for ($i=$start; $i<=$end; $i++) $sets[] = $words[$i];
-				
-				$sets = implode(' ', $sets); //now we need to expload them by commas
-				$settables = array();
-				$sets = explode(',', $sets);
-				
-				$select = '';
-				
-				foreach ($sets as $setting) {
-					
-					$setting = preg_replace("# *= *#", "=", $setting); //format the = sign with preg_replace
-					$temp_words = explode("=", $setting); //now explode it by word
-					//first word is the column, second is the table
-					$select .= $temp_words[0].',';
-					
-				}
-				
-				$select = substr($select, 0, strlen($select)-1);
-				$sql = sprintf( "SELECT %s FROM %s %s", $select, $table, $condition );
-				
-				$return['BACKUP_DATA'] = assoc( query( $sql ) );
-			
-			break;
-			
-			case 'delete':
-			
-				$table = $words[array_search("from", $words)+1];
-				$return['TYPE'] = "DELETE";
-				
-			
-			break;
-			
-			case 'drop':
-			
-				$table = $words[2];
-				$return['TYPE'] = "DROP";
-			
-			break;
-			
-			default:
-			
-				$table = "unknown";
-				$return['TYPE'] = $words[0];
-				
-			
-			break;
-			
-		}
-		
-		$return['TABLE'] = $table;
-		
-		return $return;
-		
-	}
-	
-	/**
-	 * This is the public method of the back up class. Executing this upon a SQL statement will back up its previous contents
-	 *
-	 * @access public
-	 * @param $sql The statement to back up
-	 * @return boolean The value of the query, which is true or false, to determine whether it was successful or not.
-	 */
-	
-	public function backupStmt( $sql ) {
-		
-		$arr = $this->formatSQL( $sql ); //run the SQL parsing
-		$serialized = serialize($arr); //serialize the parsed SQL for entry into the database
-		
-		$sformat = 'INSERT INTO %s (data) VALUES ("%s")';
-		$sql = sprintf($sformat, self::TBL, e( $serialized ));
-		
-		$q = query( $sql ); //enter it in
-		
-		return $q; //return the result
-			
-	}
 }

@@ -201,12 +201,7 @@ class fQueryRows extends fQuery {
 
     private $columns = array();
 
-    /**
-     * @var string $sqlBefore This is a pre-formatted SQL statement used in a sprintf function to add the parameters in.
-     * @constantvar
-     */
 
-    const sqlBefore = "SELECT SQL_CALC_FOUND_ROWS %s FROM `%%s` WHERE %s %s %s";
 
     /**
      * @var mixed $stmts Holds statements as they are added by the __construct() function, which calls the parse method.
@@ -250,51 +245,6 @@ class fQueryRows extends fQuery {
 
         } else throw new fQueryError('nosupport'); //if place is not set, kill the program
 
-    }
-
-    /**
-     * Function buildSQLFromStmts uses the $stmt array to make a real SQL statement.
-     *
-     * This function uses the loaded statements to create a SQL statement to be executed after being filled in
-     * with the table name. Uses priority first, then non priority statements.
-     *
-     * @return string The SQL statement with one variable %s to be used with sprintf($return, $tablename);
-     *
-     * @access public
-     */
-
-    private function buildSQLFromStmts() {
-
-        $sql_array = array(0=>'', 1=>'', 2=>'', 3=>''); //the first array. 4 keys correlate with 4 '%s'
-        foreach ( $this->stmts as $pl => $v ) { //start cycling through the statements.
-
-            $curr = &$sql_array[$pl]; //simplify
-            $curr = ""; //initialize
-            if ( array_key_exists("prio", $v) ) { //if there are priority keys, execute them first
-                foreach ( $v['prio'] as $new ) {
-                    if ($pl == 1) $curr .= $new." AND ";
-                    elseif ($pl == 0) $curr .= $new.",";
-                    else $curr .= $new." ";
-                }
-            }
-
-            if ( array_key_exists("none", $v) ) { //If there are non-priority indexes, do them.
-                foreach ( $v['none'] as $new ) {
-                    if ($pl == 1) $curr .= $new." AND ";
-
-                    elseif ($pl == 0) $curr .= $new.",";
-                    else $curr .= $new." ";
-                }
-            }
-
-            if ($pl == 1) $curr = preg_replace('# *AND *$#i', '', $curr); //for placement 1 we need to remove the last AND
-            else $curr = preg_replace('# *[,]+ *$#i', '', $curr); //for all other placements there will be a trailing comma.
-        }
-
-        if ( empty($sql_array[1]) ) $sql_array[1] = "1 = 1"; //if there is nothing in the first SQL array, populate it with filler text
-        $ret = sprintf( self::sqlBefore, $sql_array[0], $sql_array[1], $sql_array[2], $sql_array[3] ); //build the STATEMENT from the format
-
-        return $ret; //return the new statement
     }
 
     /**
@@ -449,6 +399,8 @@ class fQueryRows extends fQuery {
          */
 
         //now we need to build the SQL. This has to be done in three parts: $sqlConditions, $sqlCols, and $endClauses
+
+
         $sqlConditions = $sqlCols = $endClauses = ''; //initialize the variables.
 
         foreach ( $selectorData as $columnData ): //cycle through the selector data
@@ -498,7 +450,7 @@ class fQueryRows extends fQuery {
 
         $this->add_sql( $sqlCols, 0, 1); //add into the first position the columns
 
-        return $this->buildSQLFromStmts(); //build the SQL from the statements and return it to the __construct function
+        return $this->getDriver()->Find( $this->stmts ); //build the SQL from the statements and return it to the __construct function
     }
 
     /**
@@ -515,6 +467,13 @@ class fQueryRows extends fQuery {
      */
 
     public function interpretParam( $colname, $p ) {
+
+        /**
+         * This is totally different unfortunately,
+         * it will have to use that awkward meta syntax that WordPress loves so let's just see
+         * where we go with it
+         * @todo
+         */
 
         $return = ''; //prepare return data
         if ( $p['name'] == "value" || $p['name'] == "v" || $p['name'] == "x" ) { //if the param name is "value"
@@ -668,18 +627,9 @@ class fQueryRows extends fQuery {
             $this->selector = (string) $selectors;
             if ($context == null) $context = self::$last_table;
             if ($context == null) throw new fQueryError("ucontext");
-
-            if (fQuery::$fQuerySafetyDefault) {
-
-                self::$useDatabase->query(sprintf("SHOW COLUMNS FROM %s", self::$useDatabase->e($context)));//this may save time
-
-                $columns = array();
-
-                while ($r = self::$useDatabase->assoc()) {
-                    $columns[] = $r['Field'];
-                }
-                $this->columns = $columns; //this adds around 5 milliseconds to the load time of this function per instantiation. it my be too costly.
-
+            // Used to be fQuery::$fQuerySafetyDefault
+            if (true) {
+                $this->columns = $this->getDriver()->getColumns($context);
             }
 
             $parsed = $this->parse( (string) $selectors );

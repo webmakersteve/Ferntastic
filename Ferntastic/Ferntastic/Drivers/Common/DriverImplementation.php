@@ -19,5 +19,9 @@ class DriverImplementation {
 	public static function Uses( Driver $x ) {
 		self::$Driver = $x;	
 	}
+    protected function getDriver() {
+        if ($this->HasSetDriver()) return self::$Driver;
+        else throw new Exception(); //@todo
+    }
 }
 
