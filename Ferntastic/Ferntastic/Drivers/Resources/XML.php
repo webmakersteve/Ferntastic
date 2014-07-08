@@ -1,5 +1,18 @@
 <?php
 
+
+/**
+ * XML Resource Driver
+ *
+ * I prefer XML because that's the way Android does it, but this is a valid way too. Just uses
+ * a combination of key-value pairs
+ *
+ * @author Stephen Parente (stephen@91ferns.com)
+ * @package Drivers
+ * @version 0.3
+ *
+ */
+
 namespace Ferntastic\Drivers\Resources;
 
 use Ferntastic\Drivers\Common\Driver;
@@ -20,8 +33,7 @@ class XML extends Driver implements ResourceDriver {
 	
 	public function LoadResources( $Directory ) {
 		$this->lastDirectory = $Directory;
-//		error_reporting(E_ALL);
-	//	ini_set('display_errors', '1');
+
 		if (!is_dir( $Directory) ) throw new ResourceError(ERROR_RESOURCE_NO_DIRECTORY, array('data' => $Directory));
 		if (is_readable( $Directory ) && $dir = opendir($Directory)) {
 			$_resources = array();
