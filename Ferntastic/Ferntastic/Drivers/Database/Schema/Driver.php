@@ -13,5 +13,6 @@ interface Driver extends DriverTemplate {
 	public function Connect( $Parameters );
 
     public function getColumns( $Collection );
+    public function fetchTotals();
 		
 }

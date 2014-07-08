@@ -46,4 +46,4 @@ use Ferntastic\fQuery\fQuery as fQuery;
 $x = fQuery::Invoke();
 print_r($x);
 $newInstance = $x->Create('accounts', 'id');
-var_dump($newInstance);
+

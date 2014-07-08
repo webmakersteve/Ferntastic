@@ -49,7 +49,7 @@ class fQueryRows extends fQuery {
             } elseif ( $numArgs == 2 ) $ret = fQuery::$useDatabase->e( $arr[0].",".$arr[1] );
             else $ret = "0,20";
             $ret = sprintf("LIMIT %s", $ret);
-            $q->add_sql( $ret, 3, 1);
+            $q->addStatement( $ret, 3, 1);
 
         };
 
@@ -61,7 +61,7 @@ class fQueryRows extends fQuery {
                 $ret =  fQuery::$useDatabase->e( $col );
             }
             $ret = "GROUP BY ".$ret;
-            $q->add_sql( $ret, 2, 1 );
+            $q->addStatement( $ret, 2, 1 );
 
         };
 
@@ -72,7 +72,7 @@ class fQueryRows extends fQuery {
         $order = function( $params, $col, $q ) {
             $ret = fQuery::$useDatabase->e( $col ) . " " . StringFormatter::removeQuotes( $params ) . "";
             $ret = sprintf( "ORDER BY %s", $ret );
-            $q->add_sql( $ret, 2, 2 );
+            $q->addStatement( $ret, 2, 2 );
         };
 
         //add function
@@ -99,18 +99,11 @@ class fQueryRows extends fQuery {
     private $current = -1;
 
     /*
-     * @var mysqlresource $query Holds the query link for use in mysqli functions
-     * @access private
-     */
-
-    private $query; //the query data (a mysql_result_resource
-
-    /*
      * @var mixed $row_data An array with all the row data in the selection.
      * @access private
      */
 
-    protected $row_data = array(); //the row data from assoc
+    protected $Data = array(); //the row data from the database driver
 
     /*
      * @var array $curr_row The data for the currently loaded post for EACH statements
@@ -120,11 +113,11 @@ class fQueryRows extends fQuery {
     private $curr_row;
 
     /*
-     * @var $lastSQL SQL statement executed last among all the classes
-     * @staticvar string $lastSQL;
+     * @var $lastStatement: statement executed last among all the classes
+     * @staticvar string $lastStatement;
      */
 
-    static $lastSQL = ''; //static variable used to access the last SQL statement
+    static $lastStatement = ''; //static variable used to access the last SQL statement
 
     /*
      * @var integer $count holds the number of rows in the current selection
@@ -139,14 +132,14 @@ class fQueryRows extends fQuery {
      * @staticvar $last_table
      */
 
-    static $last_table = null;
+    static $lastCollection = null;
 
     /*
      * @var mixed $cols Holds the column data that is being loaded by this fQuery object
      * @access private
      */
 
-    private $cols = array();
+    private static $columnCache = array();
 
     /*
      * @var array $arguments This is the array used to load the extra arguments in the __construct function
@@ -218,11 +211,11 @@ class fQueryRows extends fQuery {
     private $executionType;
 
     /**
-     * Function add_sql adds SQL statements to the $stmt array.
+     * Function AddStatement adds SQL statements to the $stmt array.
      *
      * Adds the statements into the statement array. Takes 3 parameters. Uses both
      * priorities and places. Places correlate with the '%s' in the string format.
-     * For example, if you're adding a column you would use add_sql($stmt, 1); Priority
+     * For example, if you're adding a column you would use addStatement($stmt, 1); Priority
      * determines which one will load first. There can only be one priority in the array, so if
      * prio 101 is called twice, it will be overwritten. Use this when there can only be one of a given statement.
      * There may only be one limit clause so this would come in useful for such things.
@@ -235,7 +228,7 @@ class fQueryRows extends fQuery {
      * @access public
      */
 
-    public function add_sql($stmt, $place=null, $prio=0) {
+    public function addStatement($stmt, $place=null, $prio=0) {
 
         if ($place !== null) { //if place is set, use it
             $place = (int) $place;
@@ -267,7 +260,7 @@ class fQueryRows extends fQuery {
         $inQuote = false;
         $inBracket = false;
         $inBrace = false;
-        $inParenthesis = false;
+        $inParentheses = false;
         $inSingQuote = false;
 
         $counter = 0;
@@ -301,18 +294,18 @@ class fQueryRows extends fQuery {
                     break;
 
                 case '(':
-                    if (!$inQuote and !$inSingQuote) $inParenthesis = true;
+                    if (!$inQuote and !$inSingQuote) $inParentheses = true;
                     $newString .= $temp;
                     break;
 
                 case ')':
-                    if (!$inQuote and !$inSingQuote) if ($inParenthesis) $inParenthesis = false;
+                    if (!$inQuote and !$inSingQuote) if ($inParentheses) $inParentheses = false;
                     $newString .= $temp;
                     break;
 
                 case ',':
 
-                    if (!$inQuote and !$inBrace and !$inBracket and !$inParenthesis) {
+                    if (!$inQuote and !$inBrace and !$inBracket and !$inParentheses) {
                         $newString .= $rep;
                     } else $newString .= $temp;
 
@@ -347,7 +340,7 @@ class fQueryRows extends fQuery {
             } else {
 
                 $colname = $matches['colname']; //this one has to be set for the REGEX to go true
-                if (!in_array($colname, $this->columns) and $colname != "*") continue;
+                if (!$this->columnIsInCache($colname) and $colname != "*") continue;
                 $are_params = !empty($matches['params']) ? $matches['params'] : false; //does not need to be set
                 $are_functions = !empty($matches['functions']) ? $matches['functions'] : false; //does not need to be set
 
@@ -406,7 +399,6 @@ class fQueryRows extends fQuery {
         foreach ( $selectorData as $columnData ): //cycle through the selector data
 
             $curr = '';
-            $this->cols[] = $columnData['colname'];
             if ( $sqlCols != "*") {
                 //If, at any point, there is a wildcard, the entire string needs to be replaced with a wildcard.
                 if ($columnData['colname'] == "*") $sqlCols = "*"; else $sqlCols .= $columnData['colname'] . ",";
@@ -444,12 +436,31 @@ class fQueryRows extends fQuery {
 
             }
 
-            if (!empty($curr)) $this->add_sql($curr, 1);
+            if (!empty($curr)) $this->addStatement($curr, 1);
 
         endforeach;
 
-        $this->add_sql( $sqlCols, 0, 1); //add into the first position the columns
+        $this->addStatement( $sqlCols, 0, 1); //add into the first position the columns
         return $this->stmts; //build the SQL from the statements and return it to the __construct function
+    }
+
+    private function getCurrentContext() {
+        if ($this->CollectionName) return $this->CollectionName;
+        throw new fQueryError('ucontext');
+    }
+
+    private function setCurrentContext($context) {
+        $this->CollectionName = $context;
+    }
+
+    private function addColumnToCache( $colname, $context=null ) {
+        if ($context === null) $this->getCurrentContext();
+        self::$columnCache[$context][$colname] = true;
+    }
+
+    private function columnIsInCache( $colname, $context=null ) {
+        if ($context === null) $this->getCurrentContext();
+        return array_key_exists($colname, self::$columnCache[$context]);
     }
 
     /**
@@ -587,7 +598,7 @@ class fQueryRows extends fQuery {
 
     }
 
-    private $table_name = null;
+    private $CollectionName = null;
 
     /**
      * fQuery is the Ferns Query Object used for all DB-based websites. It cycles through the DB
@@ -623,29 +634,34 @@ class fQueryRows extends fQuery {
                 } else {/*throw notice*/}
 
             }
+
             $this->selector = (string) $selectors;
-            if ($context == null) $context = self::$last_table;
-            if ($context == null) throw new fQueryError("ucontext");
-            // Used to be fQuery::$fQuerySafetyDefault
-            $this->columns = $this->getDriver()->getColumns($context);
 
-            $statements = $this->parse( (string) $selectors );
+            if ($context == null) $context = (self::$lastCollection) ? self::$lastCollection : null;
+            if ($context == null) throw new fQueryError("ucontext"); //no context yields error
 
-            $found = $this->getDriver()->Find( $statements, $context );
+            $this->setCurrentContext($context); //sets current context for use in other functions
+
+            // Used to be fQuery::$fQuerySafetyDefault. We force safety now but just need to come up with a way to cache it better
+            $columns = $this->getDriver()->getColumns($context);
+            foreach( $columns as $col ) {
+                $this->addColumnToCache($col); //this safely adds a new column to the cache
+            }
+
+            $statements = $this->parse( $selectors );
+            $found = $this->getDriver()->Find( $statements, $this->getCurrentContext() );
 
             $this->oldStmts[] = $statements;
 
-            self::$last_table = $context; //set the static variable of context as the default of context
-            $this->table_name = $context; //set local variable too
+            self::$lastCollection = $context; //set the static variable of context as the default of context
 
             if ( ($count = count($found) ) > 0) {
-
                 $this->count = $count;
                 /**
                  * Now we need to get totla rows found on the last query
                  */
                 $this->total_count = $this->getDriver()->fetchTotals();
-                $this->row_data = $found;
+                $this->Data = $found;
                 return $this;
 
             } else return $this;
@@ -709,7 +725,7 @@ class fQueryRows extends fQuery {
         $selectors = func_get_arg(0);
         $tbl = func_num_args() > 1 ? func_get_arg(1) : null;
 
-        if ($tbl == null) $tbl = self::$last_table;
+        if ($tbl == null) $tbl = self::$lastCollection;
         if ($tbl == null) throw new fQueryError('tblparams');
 
         //nature of filter does not require fetching information from the database, we just need to weed out certain entries
@@ -735,7 +751,7 @@ class fQueryRows extends fQuery {
             $newdata = $this->num = count($ret); //returns the number after the merge (4 - 3+1)
 
             $this->total_count = ( ( $this->total_count + $tot ) - ( $olddata - $newdata ) );
-            $this->count = count( $this->row_data );
+            $this->count = count( $this->Data );
 
 
         } else return false;
@@ -745,7 +761,7 @@ class fQueryRows extends fQuery {
 
     public function this() {
         if ($this->count > 0):
-            return new fQueryData($this->row_data[$this->current + 1]);
+            return new fQueryData($this->Data[$this->current + 1]);
         else:
             return false;
         endif;
@@ -753,7 +769,7 @@ class fQueryRows extends fQuery {
 
     public function extract( &$var ) {
         if ($this->count > 0):
-            $var = $this->row_data[$this->current + 1];
+            $var = $this->Data[$this->current + 1];
             return true;
         else:
             return false;
@@ -765,7 +781,7 @@ class fQueryRows extends fQuery {
         $sql = isset($this->oldSQL[count($this->oldSQL)-1]) ? $this->oldSQL[count($this->oldSQL)-1] : $this->oldSQL[0];
         $this->query = self::$useDatabase->query( $sql );
 
-        $this->row_data = array();
+        $this->Data = array();
 
         if ( ($count = self::$useDatabase->num_rows( $this->query ) ) > 0) {
 
@@ -775,7 +791,7 @@ class fQueryRows extends fQuery {
             $r = self::$useDatabase->arr( $q );
             $this->total_count = $r[0];
 
-            while ( $r = self::$useDatabase->assoc( $this->query ) ) $this->row_data[] = $r;
+            while ( $r = self::$useDatabase->assoc( $this->query ) ) $this->Data[] = $r;
 
             return $this;
 
@@ -799,7 +815,7 @@ class fQueryRows extends fQuery {
                 if ( is_callable( $func ) )
                 {
 
-                    $newob = new fQueryData( $this->row_data[$this->current] );
+                    $newob = new fQueryData( $this->Data[$this->current] );
                     call_user_func( $func,  $newob );
                     unset( $newob );
                 }
@@ -856,19 +872,18 @@ class fQueryRows extends fQuery {
             $conditions = $sql_array[1];
 
             $sformat = "UPDATE `%s` SET %s WHERE %s %s %s";
-            $tbl = $this->table_name;
+            $tbl = $this->CollectionName;
 
             /** PARSE THE UPDATE ARRAY **/
 
             //$sel is expected to be an array of changes that are in the cols called
 
-            $columns = $this->columns;
             $newstring = "";
 
             if (is_array($sel) and count($sel) > 0) {
                 foreach ( $sel as $the_column => $the_new_value ):
 
-                    if (!in_array( $the_column, $columns) ) continue;
+                    if ( $this->columnIsInCache($the_column)) continue;
                     //continue only if it is in the columns which exist
 
                     $temp = "%s = ";
@@ -918,7 +933,7 @@ class fQueryRows extends fQuery {
 
     private function have_data() {
 
-        $data = $this->row_data;
+        $data = $this->Data;
         $index = $this->current;
 
         @$curr_data = $data[$index+1];

@@ -57,7 +57,7 @@ class fQuery extends DriverImplementation {
 
                 if (count($arguments) > 1) {
                     $executionType="ROWS";
-                    $context = $arguments[0] == null ? fQueryRows::$last_table : $arguments[0];
+                    $context = $arguments[0] == null ? fQueryRows::$lastCollection : $arguments[0];
                     $selectors = $arguments[1];
                     unset( $arguments[1] );
                     unset( $arguments[0] );
@@ -82,7 +82,7 @@ class fQuery extends DriverImplementation {
             if ( $executionType == "ROWS") {
 
                 $selector = (string) $selectors;
-                if ($context == null) $context = fQueryRows::$last_table;
+                if ($context == null) $context = fQueryRows::$lastCollection;
                 if ($context == null) throw new fQueryError("ucontext");
 
                 $x = new fQueryRows( $context, $selectors, $arguments );

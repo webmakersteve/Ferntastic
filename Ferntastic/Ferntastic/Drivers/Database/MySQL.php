@@ -181,11 +181,8 @@ class MySQL extends Driver implements DatabaseDriver  {
     public function fetchTotals() {
         $sql = "SELECT FOUND_ROWS();";
         $this->query( $sql );
-        $r = $this->queryToArray( );
-        echo 'hey';
-        print_r($r);
-        exit;
-        $this->total_count = $r[0];
+        $r = $this->queryToArray();
+        return $r[0]['FOUND_ROWS()'];
     }
 
 	public function Update( $Conditions, $Changes ) {
