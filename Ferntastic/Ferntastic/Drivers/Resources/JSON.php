@@ -21,7 +21,7 @@ use Ferntastic\Errors\ResourceError;
 class JSON extends Driver implements ResourceDriver {
 
     private $lastDirectory = false;
-    
+
     protected static $instance = NULL;
     protected function __construct() {
         return $this;
