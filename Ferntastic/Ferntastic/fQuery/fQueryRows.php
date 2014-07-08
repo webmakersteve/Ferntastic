@@ -827,7 +827,7 @@ class fQueryRows extends fQuery {
 
             $this->current = -1;
 
-            return (fQuery::$fQueryChainingDefault) ? $this : true;
+            return $this;
 
         endif;
 

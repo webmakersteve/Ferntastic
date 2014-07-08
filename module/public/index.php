@@ -44,6 +44,9 @@ if (!empty($failed)) {
 use Ferntastic\fQuery\fQuery as fQuery;
 
 $x = fQuery::Invoke();
-print_r($x);
+
 $newInstance = $x->Create('accounts', 'id');
 
+$newInstance->each(function($data) {
+    echo $data->id;
+});
