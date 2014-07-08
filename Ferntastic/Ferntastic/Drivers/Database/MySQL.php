@@ -29,6 +29,7 @@ class MySQL extends Driver implements DatabaseDriver  {
 
     protected static $instance = NULL;
     protected function __construct() {
+
         return $this;
     }
 
@@ -39,10 +40,21 @@ class MySQL extends Driver implements DatabaseDriver  {
 
     protected $usingTable = NULL;
 	protected function checkIfTableSet() {
-		if ($this->usingTable === NULL) throw new DatabaseError( ERR_MYSQL_NO_TABLE_SELECTED );	
+		if ($this->usingTable === NULL) throw new DatabaseError( ERR_MYSQL_NO_TABLE_SELECTED );
 	}
 	
 	public function getColumns( $Collection ) {
+
+        //just for now we are going to connect
+        $conn = mysqli_connect( 'localhost', 'test', 'test', 'test');
+        $this->Connect(array(
+            'Username' => 'test',
+            'Password' => 'test',
+            'Host' => 'localhost',
+            'Database' => 'test'
+        ));
+
+
         $sql = sprintf("SHOW COLUMNS FROM %s", $this->Escape($Collection));//this may save time
 
         $this->query( $sql );
@@ -52,7 +64,8 @@ class MySQL extends Driver implements DatabaseDriver  {
         while ($r = $this->assoc()) {
             $columns[] = $r['Field'];
         }
-        print_r($columns);
+
+        return $columns;
     }
 
 	public function Insert( $Values ) {
@@ -115,9 +128,13 @@ class MySQL extends Driver implements DatabaseDriver  {
      * @access public
      */
 
-    public function Find( $stmts ) {
-        $this->checkIfTableSet();
-        print_r($stmts);
+    public function Find( $stmts, $table=null ) {
+
+        if ($table == null) {
+            $this->checkIfTableSet();
+            $table = $this->usingTable;
+        }
+
         $sql_array = array(0=>'', 1=>'', 2=>'', 3=>''); //the first array. 4 keys correlate with 4 '%s'
         foreach ( $stmts as $pl => $v ) { //start cycling through the statements.
 
@@ -146,8 +163,29 @@ class MySQL extends Driver implements DatabaseDriver  {
 
         if ( empty($sql_array[1]) ) $sql_array[1] = "1 = 1"; //if there is nothing in the first SQL array, populate it with filler text
         $ret = sprintf( self::sqlBefore, $sql_array[0], $sql_array[1], $sql_array[2], $sql_array[3] ); //build the STATEMENT from the format
-        echo $ret;
-        return $ret; //return the new statement
+        $ret = sprintf($ret, $table);
+        $this->query($ret);
+
+        return $this->queryToArray();
+
+    }
+
+    protected function queryToArray() {
+        $array = array();
+        while ($r = $this->assoc()) {
+            $array[] = $r;
+        }
+        return $array;
+    }
+
+    public function fetchTotals() {
+        $sql = "SELECT FOUND_ROWS();";
+        $this->query( $sql );
+        $r = $this->queryToArray( );
+        echo 'hey';
+        print_r($r);
+        exit;
+        $this->total_count = $r[0];
     }
 
 	public function Update( $Conditions, $Changes ) {
@@ -162,7 +200,7 @@ class MySQL extends Driver implements DatabaseDriver  {
 		
 		$user = $Parameters['Username'] ? $Parameters['Username'] : null;
 		$host = $Parameters['Host'] ? $Parameters['Host'] : null;
-		$password = $Parameters['Password'] ? $Parameters['Password'] : '';
+		$password = $Parameters['Password'] ? $Parameters['Password'] : null;
 		$db = $Parameters['Database'] ? $Parameters['Database'] : null;
 		
 		if (!$host || !$db || !$user ) {
@@ -189,8 +227,8 @@ class MySQL extends Driver implements DatabaseDriver  {
 	public $last_sql = '';
 	
 	private function MySQLConnect( $db_host, $db_user, $db_password, $db_name ) {
-		$db_object = @mysqli_connect( $db_host, $db_user, $db_password, $db_name );
-		if ($db_object && mysqli_error( $db_object ) != "")
+		$db_object = mysqli_connect( $db_host, $db_user, $db_password, $db_name );
+		if ($db_object && mysqli_error( $db_object ) == "")
 			$this->db_object = $db_object;	
 		else throw new DatabaseError( ERR_MYSQL_CONN_ERROR, $db_object ? mysqli_error( $db_object ) : array() );
 	}

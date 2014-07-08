@@ -40,3 +40,10 @@ if (!defined('CORE_INCLUDE_PATH')) {
 if (!empty($failed)) {
 	trigger_error("There was a problem loading the ferntastic core. Please check your directory structure and possibly try again", E_USER_ERROR);
 }
+
+use Ferntastic\fQuery\fQuery as fQuery;
+
+$x = fQuery::Invoke();
+print_r($x);
+$newInstance = $x->Create('accounts', 'id');
+var_dump($newInstance);

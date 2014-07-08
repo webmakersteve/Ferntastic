@@ -171,11 +171,11 @@ class fQueryRows extends fQuery {
     const PARAM_REG = "(?P<fullparams>(?P<name>[^=!<^>=~%&]+) *(?P<equal>(?:[!]?[<^>=~%&]?[<>=])) *(?P<val>(?:(?P<quote>['\"]).*(?P=quote)|(?:(?:[0-9?])+ *)+)) *[,]? *)";
 
     /**
-     * @var mixed $oldSQL Holds the old SQL statements executed
-     * @name $oldSQL
+     * @var mixed $oldStmts Holds the old build query statements executed
+     * @name $oldStmts
      */
 
-    private $oldSQL = array();
+    private $oldStmts = array();
 
     /**
      * @var mixed $funcs Holds the functions that are being loaded into fQuery.
@@ -347,7 +347,7 @@ class fQueryRows extends fQuery {
             } else {
 
                 $colname = $matches['colname']; //this one has to be set for the REGEX to go true
-                if (fQuery::$fQuerySafetyDefault) if (!in_array($colname, $this->columns) and $colname != "*") continue;
+                if (!in_array($colname, $this->columns) and $colname != "*") continue;
                 $are_params = !empty($matches['params']) ? $matches['params'] : false; //does not need to be set
                 $are_functions = !empty($matches['functions']) ? $matches['functions'] : false; //does not need to be set
 
@@ -449,8 +449,7 @@ class fQueryRows extends fQuery {
         endforeach;
 
         $this->add_sql( $sqlCols, 0, 1); //add into the first position the columns
-
-        return $this->getDriver()->Find( $this->stmts ); //build the SQL from the statements and return it to the __construct function
+        return $this->stmts; //build the SQL from the statements and return it to the __construct function
     }
 
     /**
@@ -628,28 +627,25 @@ class fQueryRows extends fQuery {
             if ($context == null) $context = self::$last_table;
             if ($context == null) throw new fQueryError("ucontext");
             // Used to be fQuery::$fQuerySafetyDefault
-            if (true) {
-                $this->columns = $this->getDriver()->getColumns($context);
-            }
+            $this->columns = $this->getDriver()->getColumns($context);
 
-            $parsed = $this->parse( (string) $selectors );
-            $sql = sprintf( $parsed, $context );
+            $statements = $this->parse( (string) $selectors );
 
-            $this->oldSQL[] = $sql;
-            $this->query = self::$useDatabase->query( $sql );
+            $found = $this->getDriver()->Find( $statements, $context );
+
+            $this->oldStmts[] = $statements;
 
             self::$last_table = $context; //set the static variable of context as the default of context
             $this->table_name = $context; //set local variable too
 
-            if ( ($count = self::$useDatabase->num_rows( $this->query ) ) > 0) {
+            if ( ($count = count($found) ) > 0) {
 
                 $this->count = $count;
-                $sql = "SELECT FOUND_ROWS();";
-                $q = self::$useDatabase->query( $sql );
-                $r = self::$useDatabase->arr( $q );
-                $this->total_count = $r[0];
-
-                while ( $r = self::$useDatabase->assoc( $this->query ) ) $this->row_data[] = $r;
+                /**
+                 * Now we need to get totla rows found on the last query
+                 */
+                $this->total_count = $this->getDriver()->fetchTotals();
+                $this->row_data = $found;
                 return $this;
 
             } else return $this;
@@ -872,7 +868,7 @@ class fQueryRows extends fQuery {
             if (is_array($sel) and count($sel) > 0) {
                 foreach ( $sel as $the_column => $the_new_value ):
 
-                    if (fQuery::$fQuerySafetyDefault and !in_array( $the_column, $columns) ) continue;
+                    if (!in_array( $the_column, $columns) ) continue;
                     //continue only if it is in the columns which exist
 
                     $temp = "%s = ";
